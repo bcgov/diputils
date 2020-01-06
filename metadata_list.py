@@ -1,10 +1,23 @@
+'''instructions to run: posix-style terminal:
+
+python3 metadata_list.py'''
+
 import os
 import sys
 import urllib3
 
+
 def err(m):
     print("Error: " + m)
     sys.exit(1)
+
+
+def run(cmd):
+    a = os.system(cmd)
+    if a != 0:
+        err("command failed: " + cmd.strip())
+    return a
+
 
 def get_lines(url):
     # get lines from a web page
@@ -35,6 +48,31 @@ for line in lines:
         name = line.split('>')[1].split('<')[0]
 
         print(name + ',' + dataset)
+
+        ds_lines = [line.rstrip() for line in os.popen("wget -qO- " + dataset).readlines()]
+
+        for ds_line in ds_lines:
+            if len(ds_line.split("/download/")) > 1:
+                ds_line = ds_line.strip()
+                # print("\t" + ds_line)
+
+                # check expected formatting
+                if ds_line[0:7] != '<a href':
+                    err(msg)
+                words = ds_line.split('"')
+                if len(words) < 2:
+                    err(msg)
+
+                fpath = words[1].strip()
+                fname = fpath.split("/")[-1].strip()
+
+                print('\t' + fname)
+                cmd = "wget " + fpath
+
+                if not os.path.exists(fname):
+                    run(cmd)
+
+
 
 '''
 python3 data_list.py
