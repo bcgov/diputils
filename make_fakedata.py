@@ -30,6 +30,8 @@ for f in files:
                     err("expected: " + str(n_fields) + " got: " + str(len(row)))
             is_header = False # already visited header
 
+# if 'Code Table' in hdr:
+
 print("intersection", intersect)
 print("union",union)
 print("good news: all metadata files had same # of fields, within a table!")
