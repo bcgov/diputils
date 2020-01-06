@@ -25,6 +25,13 @@ def get_lines(url):
     html = http.request('GET', url).data
     return str(html).split("\\n")
 
+# make metadata/ folder
+if not os.path.exists("metadata") or not os.path.isdir("metadata"):
+    os.mkdir("metadata")
+
+# stuff metadata files in a folder
+run("mv -f *.csv metadata/")
+
 # get dip metadata
 url = "https://catalogue.data.gov.bc.ca/group/data-innovation-program?tags=DIP"
 msg = 'unanticipated data stream'
@@ -77,7 +84,10 @@ for line in lines:
                 print('\t' + fname)
                 cmd = "wget " + fpath
 
-                if not os.path.exists(fname):
+                if not os.path.exists("metadata/" + fname):
                     run(cmd)
+
+# stuff metadata files into folder
+run("mv -f *.csv metadata/")
 
 # next: classify field types: nominal, ordinal, date?
