@@ -28,6 +28,10 @@ def get_lines(url):
 # make metadata/ folder
 if not os.path.exists("metadata") or not os.path.isdir("metadata"):
     os.mkdir("metadata")
+else:
+    print("done")
+    sys.exit(0)
+
 
 # stuff metadata files in a folder
 run("mv -f *.csv metadata/")
@@ -89,5 +93,43 @@ for line in lines:
 
 # stuff metadata files into folder
 run("mv -f *.csv metadata/")
+print("done")
 
-# next: classify field types: nominal, ordinal, date?
+# ls -1 metadata/
+'''
+educ_dip_cb_fnlmrk_ft_fnlmrk_vwd_metadata.csv
+educ_dip_cb_slscb_ft_anon_rspdnt_vwd_metadata.csv
+educ_dip_cb_slscb_ft_idnt_rspdnt_vwd_metadata.csv
+educ_dip_cb_slscb_ft_response_vwd_metadata.csv
+educ_dip_cb_stulvlcb_ft_crsmrk_vwd_metadata.csv
+educ_dip_cb_stulvlcb_ft_fsasclsm0_vwd_metadata.csv
+educ_dip_cb_stulvlcb_ft_fsasclsm8_vwd_metadata.csv
+educ_dip_cb_stulvlcb_ft_schlstud_vwd_metadata.csv
+educ_dip_cb_stulvlcb_ft_studcrd_vwd_metadata.csv
+educ_dip_dm_dimstud_metadata.csv
+lmid_dip_exit_metadata.csv
+lmid_dip_intake_metadata.csv
+lmid_dip_participant_metadata.csv
+lmid_dip_training_metadata.csv
+mcfd_dip_actv_stage_7_metadata.csv
+mcfd_dip_all_client_export_metadata.csv
+mcfd_dip_cs_clients_parental_metadata.csv
+mcfd_dip_cysn_clients_metadata.csv
+mcfd_dip_intake_export_metadata.csv
+mcfd_dip_location_history_metadata.csv
+mcfd_dip_mcfd_fs_case.csv
+mcfd_dip_mis_fs_list_export.csv
+mcfd_dip_subsidy_metadata.csv
+sdpr_dip_bcea_cases_idd_metadata.csv
+sdpr_dip_bcea_famtype_codes_metadata.csv
+sdpr_dip_bcea_involvement_idd_metadata.csv
+sdpr_dip_bcea_program_codes_metadata.csv
+sdpr_dip_case_address.csv
+sdpr_dip_case_aka.csv
+sdpr_dip_case_demograph.csv
+sdpr_dip_case_detail.csv
+sdpr_dip_case_header.csv
+sdpr_dip_case_involve.csv
+'''
+
+# next: iterate metadata, classify field types: nominal, ordinal, date?
