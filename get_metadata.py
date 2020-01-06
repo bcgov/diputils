@@ -131,5 +131,3 @@ sdpr_dip_case_detail.csv
 sdpr_dip_case_header.csv
 sdpr_dip_case_involve.csv
 '''
-
-# next: iterate metadata, classify field types: nominal, ordinal, date?
