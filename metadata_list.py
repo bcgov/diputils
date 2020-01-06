@@ -30,6 +30,14 @@ url = "https://catalogue.data.gov.bc.ca/group/data-innovation-program?tags=DIP"
 msg = 'unanticipated data stream'
 lines = get_lines(url)
 
+'''
+Metadata for Child Welfare Program,https://catalogue.data.gov.bc.ca/dataset/metadata-for-child-welfare-program
+Metadata for K-12 student demographics and achievements,https://catalogue.data.gov.bc.ca/dataset/metadata-for-k-12-student-demographics-and-achievements
+Metadata for BC Benefits Program,https://catalogue.data.gov.bc.ca/dataset/metadata-for-bc-benefits-program
+Metadata for Labour Market Programs,https://catalogue.data.gov.bc.ca/dataset/metadata-for-labour-market-programs
+Metadata for BC Employment and Assistance,https://catalogue.data.gov.bc.ca/dataset/metadata-for-bc-employment-and-assistance
+'''
+
 for line in lines:
     if len(line.split('<a href="/dataset/')) > 1:
         line = line.strip()
@@ -72,13 +80,4 @@ for line in lines:
                 if not os.path.exists(fname):
                     run(cmd)
 
-
-
-'''
-python3 data_list.py
-Metadata for Child Welfare Program,https://catalogue.data.gov.bc.ca/dataset/metadata-for-child-welfare-program
-Metadata for K-12 student demographics and achievements,https://catalogue.data.gov.bc.ca/dataset/metadata-for-k-12-student-demographics-and-achievements
-Metadata for BC Benefits Program,https://catalogue.data.gov.bc.ca/dataset/metadata-for-bc-benefits-program
-Metadata for Labour Market Programs,https://catalogue.data.gov.bc.ca/dataset/metadata-for-labour-market-programs
-Metadata for BC Employment and Assistance,https://catalogue.data.gov.bc.ca/dataset/metadata-for-bc-employment-and-assistance
-'''
+# next: classify field types: nominal, ordinal, date?
