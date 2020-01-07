@@ -25,6 +25,7 @@ def get_lines(url):
     html = http.request('GET', url).data
     return str(html).split("\\n")
 
+
 # make metadata/ folder
 if not os.path.exists("metadata") or not os.path.isdir("metadata"):
     os.mkdir("metadata")
@@ -42,11 +43,16 @@ msg = 'unanticipated data stream'
 lines = get_lines(url)
 
 '''
-Metadata for Child Welfare Program,https://catalogue.data.gov.bc.ca/dataset/metadata-for-child-welfare-program
-Metadata for K-12 student demographics and achievements,https://catalogue.data.gov.bc.ca/dataset/metadata-for-k-12-student-demographics-and-achievements
-Metadata for BC Benefits Program,https://catalogue.data.gov.bc.ca/dataset/metadata-for-bc-benefits-program
-Metadata for Labour Market Programs,https://catalogue.data.gov.bc.ca/dataset/metadata-for-labour-market-programs
-Metadata for BC Employment and Assistance,https://catalogue.data.gov.bc.ca/dataset/metadata-for-bc-employment-and-assistance
+Metadata for Child Welfare Program
+    https://catalogue.data.gov.bc.ca/dataset/metadata-for-child-welfare-program
+Metadata for K-12 student demographics and achievements
+    https://catalogue.data.gov.bc.ca/dataset/metadata-for-k-12-student-demographics-and-achievements
+Metadata for BC Benefits Program
+    https://catalogue.data.gov.bc.ca/dataset/metadata-for-bc-benefits-program
+Metadata for Labour Market Programs
+    https://catalogue.data.gov.bc.ca/dataset/metadata-for-labour-market-programs
+Metadata for BC Employment and Assistance
+    https://catalogue.data.gov.bc.ca/dataset/metadata-for-bc-employment-and-assistance
 '''
 
 for line in lines:
@@ -68,7 +74,8 @@ for line in lines:
 
         print(name + ',' + dataset)
 
-        ds_lines = [line.rstrip() for line in os.popen("wget -qO- " + dataset).readlines()]
+        ds_lines = [line.rstrip() for
+                    line in os.popen("wget -qO- " + dataset).readlines()]
 
         for ds_line in ds_lines:
             if len(ds_line.split("/download/")) > 1:

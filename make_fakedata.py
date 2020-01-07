@@ -36,4 +36,3 @@ print("intersection", intersect)
 print("union",union)
 print("good news: all metadata files had same # of fields, within a table!")
 print("done")
-
