@@ -6,6 +6,15 @@ import random
 import calendar
 from misc import *
 
+# for each file, generate a random number of fake rows
+min_rows, max_rows = 1000, 1000000
+if len(sys.argv) >= 3:
+    try:
+        min_rows = int(sys.argv[1])
+        max_rows = int(sys.argv[2])
+    except:
+        err('failed to parse inputs')
+
 print("metadata,fakedata")
 intersect, union = None, None
 files = os.popen('ls -1 metadata/')
@@ -72,7 +81,10 @@ for f in files:
 
                         if len(row[lookup['Field Name']].lower().split("number")) > 1:
                             row_type[ci] = 'integer'
-    
+   
+                        if len(row[lookup['Field Name']].lower().split("_count")) > 1:
+                            row_type[ci] = 'integer'
+
                         if len(row[lookup['Field Name']].lower().split("amount")) > 1:
                             row_type[ci] = 'number'
 
@@ -122,19 +134,15 @@ for f in files:
         return(r)
 
     # random number of fake rows
-    nrows_fake = random.randrange(1, 100000)
+    nrows_fake = random.randrange(min_rows, max_rows + 1)
 
     # write a bunch of rows of fake data
     for j in range(0, nrows_fake):
         fakerow = []
         for i in range(1, ci):
-            t = None
-            try:
-                t = row_type[i]
-            except:
-                print("row_type", str(row_type), "ci", ci, "i", i, "nfields", n_fields)
-                err('')
 
+            # simulate the type of data indicated for this field
+            t = row_type[i]
             if t == 'date':
                 fakerow.append(rand_date())
             elif t == 'integer' or t == 'number':
@@ -147,4 +155,18 @@ for f in files:
 
         # write a row of fake data
         outfile.write(('\n' + ','.join(fakerow)).encode())
+
+        if j % 1111 == 0 and nrows_fake > 1111:
+            tick(j, nrows_fake, ofn)
     outfile.close()
+
+    run('python3 csv_to_fw.py ' + ofn)
+
+    ff_n = ofn[:-4] + '.dat'
+    ddfn = ofn[:-4] + '.dd'
+    zfn = ofn[:-4] + '.zip'
+
+    cmd = ' '.join(['zip -r', zfn, ff_n, ddfn])
+    run(cmd)
+
+run('rm -v fakedata/*.dat fakedata/*.dd')
