@@ -1,6 +1,8 @@
-'''
-python3 csv_to_fw.py
-'''
+'''convert csv file to "fixed width" format, incl. data dictionary (metadata)
+
+this program is run automatically by make_fakedata.py
+
+python3 csv_to_fw.py [input csv file name]'''
 from misc import *
 
 if len(args) < 2:
@@ -13,7 +15,7 @@ if not os.path.exists(inf):
 # check file is csv
 try:
     ext = inf[-4:]
-except:
+except Exception:
     err('expected .csv file')
 
 # filename for fixed-width format output file
@@ -28,7 +30,7 @@ hdr, data = None, []
 with open(inf, encoding="utf8", errors='ignore') as csvfile:
     csvreader, is_hdr = csv.reader(csvfile, delimiter=','), True
 
-    # for each row in metadata file: header or row with parameters on data field
+    # for each row in metadata file: header or row with field info
     for row in csvreader:
         row = [r.strip() for r in row]
         if is_hdr:
@@ -51,11 +53,15 @@ for i in range(0, n_fields):
         this_length = ldi if ldi > this_length else this_length
 
     this_stop = this_start + this_length - 1
-    print("start", this_start, "stop", this_stop, "length", this_length, "label", hdr[i])
-    
+    print("start", this_start,
+          "stop", this_stop,
+          "length", this_length,
+          "label", hdr[i])
+
     this_label = hdr[i]
     meta_line = [this_start, this_stop, this_length, this_label]
-    out_metafile.write(('\n' + ','.join([str(ml) for ml in meta_line])).encode())
+    meta_line = [str(ml) for ml in meta_line]
+    out_metafile.write(('\n' + ','.join(meta_line)).encode())
 
     start.append(this_start)
     stop.append(this_stop)

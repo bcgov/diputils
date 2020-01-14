@@ -1,10 +1,10 @@
 '''python3 make_fakedata.py'''
-debug = False # turn on for extra info
-
 import string
 import random
 import calendar
 from misc import *
+
+debug = False  # turn on for extra info
 
 # for each file, generate a random number of fake rows
 min_rows, max_rows = 1000, 1000000
@@ -12,7 +12,7 @@ if len(sys.argv) >= 3:
     try:
         min_rows = int(sys.argv[1])
         max_rows = int(sys.argv[2])
-    except:
+    except Exception:
         err('failed to parse inputs')
 
 print("metadata,fakedata")
@@ -23,19 +23,19 @@ files = os.popen('ls -1 metadata/')
 for f in files:
     f = f.strip()
 
-    ci = 0 # row index
+    ci = 0  # row index
     lookup = {}
     n_fields, hdr = 0, []
-    data = [] # data rows for reuse
-    row_type = {} # type information for data
+    data = []  # data rows for reuse
+    row_type = {}  # type information for data
 
     fn = 'metadata/' + f
     with open(fn, encoding="utf8", errors='ignore') as csvfile:
 
-        type_field_i = None # index of 'Field Type' attribute, if it exists
+        type_field_i = None  # index of 'Field Type' attribute, if it exists
         csvreader, is_header = csv.reader(csvfile, delimiter=','), True
-        
-        # for each row in metadata file: header or row with parameters on data field
+
+        # for each row in metadata file: header or params on data field
         for row in csvreader:
             row = [r.strip() for r in row]
 
@@ -55,8 +55,9 @@ for f in files:
                 # expect a field 'Field Name'
                 if 'Field Name' not in hdr:
                     err('expected field: "Field Name"')
-                
-                # existing field type info ['string', 'date', 'number', 'boolean']
+
+                # existing field type info:
+                # ['string', 'date', 'number', 'boolean']
                 if 'Field Type' in hdr:
                     type_field_i = lookup['Field Type']
                 data.append(row)
@@ -64,7 +65,8 @@ for f in files:
             else:
                 # process non-header row, if it is nonempty
                 if len(row) != n_fields:
-                    err("expected: " + str(n_fields) + " got: " + str(len(row)))
+                    err("expected: " + str(n_fields) +
+                        " got: " + str(len(row)))
 
                 # skip empty row
                 empty_row = True
@@ -78,18 +80,16 @@ for f in files:
                     else:
                         # assume string with some name-based overrides
                         row_type[ci] = 'string'
-
-                        if len(row[lookup['Field Name']].lower().split("number")) > 1:
+                        rlfn = row[lookup['Field Name']]
+                        if len(rlfn.lower().split("number")) > 1:
                             row_type[ci] = 'integer'
-   
-                        if len(row[lookup['Field Name']].lower().split("_count")) > 1:
+                        if len(rlfn.lower().split("_count")) > 1:
                             row_type[ci] = 'integer'
-
-                        if len(row[lookup['Field Name']].lower().split("amount")) > 1:
+                        if len(rlfn.lower().split("amount")) > 1:
                             row_type[ci] = 'number'
 
-                        # detect date type in the event date is present within field name
-                        if len(row[lookup['Field Name']].lower().split("date")) > 1:
+                        # detect date type, if present within field name
+                        if len(rlfn.lower().split("date")) > 1:
                             row_type[ci] = 'date'
 
                     if debug:
@@ -97,7 +97,7 @@ for f in files:
 
                     data.append(row)
                     ci += 1
-            is_header = False # already visited header
+            is_header = False  # already visited header
 
     # write fake data for this file
     ofn = 'fakedata/' + f.replace('_metadata', '')
@@ -110,14 +110,13 @@ for f in files:
     for i in range(1, ci):
         try:
             field_name = data[i][lookup['Field Name']].strip().upper()
-            field_name = field_name.replace(',','_')
-            csv_hdr.append(field_name) # assume field names are upper-case
-        except:
+            field_name = field_name.replace(',', '_')
+            csv_hdr.append(field_name)  # assume field names are upper-case
+        except Exception:
             err('failed to parse field name')
 
     # write the csv header
     outfile.write((','.join(csv_hdr)).encode())
-
 
     def rand_date():
         year = random.randrange(1985, 2021)
@@ -126,7 +125,6 @@ for f in files:
         day = random.randrange(rng[0], rng[0] + rng[1])
         return('-'.join([str(s) for s in [year, mont, day]]))
 
-
     def rand_string():
         r = ''
         for i in range(0, random.randrange(1, 11)):
@@ -134,7 +132,7 @@ for f in files:
         return(r)
 
     # random number of fake rows
-    nrows_fake = random.randrange(min_rows, max_rows + 1)
+    nrows_fake = random.randrange(min_rows, max_rows)
 
     # write a bunch of rows of fake data
     for j in range(0, nrows_fake):
@@ -146,9 +144,10 @@ for f in files:
             if t == 'date':
                 fakerow.append(rand_date())
             elif t == 'integer' or t == 'number':
-                fakerow.append(str(random.randrange(1,200000)))
+                fakerow.append(str(random.randrange(1, 200000)))
             elif t == 'boolean':
-                fakerow.append('True' if random.randrange(0,2) == 1 else 'False')
+                fakerow.append('True' if random.randrange(0, 2) == 1
+                               else 'False')
             else:
                 # incl. 'string' case
                 fakerow.append(rand_string())
