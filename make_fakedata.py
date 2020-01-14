@@ -122,7 +122,7 @@ for f in files:
         return(r)
 
     # random number of fake rows
-    nrows_fake = random.randrange(1, 1000000)
+    nrows_fake = random.randrange(1, 100000)
 
     # write a bunch of rows of fake data
     for j in range(0, nrows_fake):
