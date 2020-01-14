@@ -2,21 +2,8 @@
 
 python3 metadata_list.py'''
 
-import os
-import sys
 import urllib3
-
-
-def err(m):
-    print("Error: " + m)
-    sys.exit(1)
-
-
-def run(cmd):
-    a = os.system(cmd)
-    if a != 0:
-        err("command failed: " + cmd.strip())
-    return a
+from misc import *
 
 
 def get_lines(url):
