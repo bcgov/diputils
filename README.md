@@ -6,10 +6,10 @@ utilities to assist Data Innovation Program (DIP)
 This package presently supports:
 * producing synthetic data resembling the data residing within the Data Innovation Program's (DIP) Secure Research Environment
 
-Synthetic data are useful for:
+Given that access to DIP data are restricted, synthetic data resembling the DIP data are useful for:
 * training purposes
-* troubleshooting code outside the SAE with the help from knowledge experts
 * sharing examples of data with partner ministries
+* troubleshooting code outside the SAE with the help from knowledge experts
 * demonstrations within the Digital Platforms and Data (DPD) Division 
 
 Properties of data 
