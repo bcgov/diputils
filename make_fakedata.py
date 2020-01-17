@@ -3,6 +3,7 @@ import string
 import random
 import calendar
 from misc import *
+from zipfile import ZipFile as zip_file
 import csv_to_fixedwidth
 
 debug = False  # turn on for extra info
@@ -16,13 +17,23 @@ if len(sys.argv) >= 3:
     except Exception:
         err('failed to parse inputs')
 
+
+# make fakedata folder
+if not os.path.exists("fakedata") or not os.path.isdir("fakedata"):
+    os.mkdir("fakedata")
+else:
+    print("done")
+    sys.exit(0)
+
 print("metadata,fakedata")
 intersect, union = None, None
-files = os.popen('ls -1 metadata' + os.path.sep)
+files = os.listdir('metadata') # os.popen('ls -1 metadata' + os.path.sep)
 
 # for each metadata file:
 for f in files:
     f = f.strip()
+    if f[-4:] != '.csv':
+        continue
 
     ci = 0  # row index
     lookup = {}
@@ -160,14 +171,19 @@ for f in files:
             tick(j, nrows_fake, ofn)
     outfile.close()
 
-    csv_to_fixedwidth('csv_to_fixedwidth', ofn)
+    csv_to_fixedwidth.csv_to_fixedwidth(['csv_to_fixedwidth', ofn])
     # run('python3 csv_to_fw.py ' + ofn)
 
     ff_n = ofn[:-4] + '.dat'
     ddfn = ofn[:-4] + '.dd'
     zfn = ofn[:-4] + '.zip'
+    
+    # write zip file
+    my_zip = zip_file(zfn, 'w')
+    for f in [ff_n, ddfn]:
+        my_zip.write(f)
+    my_zip.close()
 
-    cmd = ' '.join(['zip -r', zfn, ff_n, ddfn])
-    run(cmd)
-
-run('rm -v fakedata/*.dat fakedata/*.dd')
+    # clean up unzipped files
+    os.remove(ff_n)
+    os.remove(ddfn)
