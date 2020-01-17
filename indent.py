@@ -14,8 +14,12 @@ if not os.path.exists(in_fn):
 shutil.copyfile(in_fn, in_fn + '.bak')
 print('+w', in_fn + '.bak')
 
-lines = open(in_fn).readlines()
-lines = [(' ' * shift_width) + line for line in lines]
+in_f = open(in_fn, 'rb')
+lines = in_f.readlines()
+in_f.close()
+
+lines = [((' ' * shift_width) +
+         line.decode('utf-8').rstrip()) for line in lines]
 open(in_fn, 'wb').write(('\n'.join(lines)).encode())
 
 # flesh this file out to be an example of command-line agnostic? key-value store of args,
