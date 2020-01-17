@@ -36,6 +36,7 @@ else:
     print("done")
     sys.exit(0)
 
+
 def mv_csv_to_folder():
     # stuff metadata files in a folder
     for f in os.listdir('.'):
@@ -45,6 +46,7 @@ def mv_csv_to_folder():
                 shutil.move(src, dst)
         except Exception:
             pass
+
 
 mv_csv_to_folder()
 

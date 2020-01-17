@@ -27,7 +27,7 @@ else:
 
 print("metadata,fakedata")
 intersect, union = None, None
-files = os.listdir('metadata') # os.popen('ls -1 metadata' + os.path.sep)
+files = os.listdir('metadata')
 
 # for each metadata file:
 for f in files:
@@ -177,7 +177,7 @@ for f in files:
     ff_n = ofn[:-4] + '.dat'
     ddfn = ofn[:-4] + '.dd'
     zfn = ofn[:-4] + '.zip'
-    
+
     # write zip file
     my_zip = zip_file(zfn, 'w')
     for f in [ff_n, ddfn]:
