@@ -13,10 +13,10 @@ Given that access to DIP data are restricted, synthetic data resembling the DIP 
 * demonstrations within the Digital Platforms and Data (DPD) Division 
 
 Properties of data 
-- Arbitrarily large 
 - Zipped
-- Fixed width format, with data dictionary / header
+- Quite large, potentially up to tens of GB per file
 - Produced from DIP metadata available on BC Data Catalogue
+- Fixed width format, with data dictionary or header that includes field names and field widths
 
 ## Project Status
 
