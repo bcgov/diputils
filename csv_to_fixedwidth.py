@@ -5,7 +5,10 @@
     python3 csv_to_fw.py [input csv file name]'''
 from misc import *
 
-def csv_to_fixedwidth():
+if len(args) >= 2:
+    csv_to_fixedwidth(args)
+
+def csv_to_fixedwidth(args):
     if len(args) < 2:
         err('python3 csv_to_fw.py [input csv file]')
     
