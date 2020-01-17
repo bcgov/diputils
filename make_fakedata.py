@@ -9,7 +9,7 @@ import csv_to_fixedwidth
 debug = False  # turn on for extra info
 
 # for each file, generate a random number of fake rows
-min_rows, max_rows = 1000, 1000000
+min_rows, max_rows = 1000, 100000
 if len(sys.argv) >= 3:
     try:
         min_rows = int(sys.argv[1])
@@ -181,7 +181,7 @@ for f in files:
     # write zip file
     my_zip = zip_file(zfn, 'w')
     for f in [ff_n, ddfn]:
-        my_zip.write(f)
+        my_zip.write(f, f.split(os.path.sep)[-1])
     my_zip.close()
 
     # clean up unzipped files
