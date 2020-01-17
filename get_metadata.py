@@ -2,8 +2,10 @@
 
 python3 metadata_list.py'''
 
+import shutil
 import urllib3
 from misc import *
+sep = os.path.sep
 
 
 def get_lines(url):
@@ -13,6 +15,17 @@ def get_lines(url):
     return str(html).split("\\n")
 
 
+def get(url):
+    http = urllib3.PoolManager()
+    html = http.request('GET', url).data
+    return str(html)
+
+
+def get_lines(url):
+    # get lines from a web page
+    return get(url).split("\\n")
+
+
 # make metadata/ folder
 if not os.path.exists("metadata") or not os.path.isdir("metadata"):
     os.mkdir("metadata")
@@ -20,9 +33,16 @@ else:
     print("done")
     sys.exit(0)
 
+def mv_csv_to_folder():
+    # stuff metadata files in a folder
+    for f in os.listdir('.'):
+        try:
+            if f[-4] == '.csv':
+                shutil.move(f, 'metadata' + sep + f)
+        except Exception:
+            pass
 
-# stuff metadata files in a folder
-run("mv -f *.csv metadata/")
+mv_csv_to_folder()
 
 # get dip metadata
 url = "https://catalogue.data.gov.bc.ca/group/data-innovation-program?tags=DIP"
@@ -82,11 +102,11 @@ for line in lines:
                 print('\t' + fname)
                 cmd = "wget " + fpath
 
-                if not os.path.exists("metadata/" + fname):
+                if not os.path.exists("metadata" + sep + fname):
                     run(cmd)
 
 # stuff metadata files into folder
-run("mv -f *.csv metadata/")
+mv_csv_to_folder()
 print("done")
 
 # ls -1 metadata/

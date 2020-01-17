@@ -17,7 +17,7 @@ if len(sys.argv) >= 3:
 
 print("metadata,fakedata")
 intersect, union = None, None
-files = os.popen('ls -1 metadata/')
+files = os.popen('ls -1 metadata' + os.path.sep)
 
 # for each metadata file:
 for f in files:
@@ -29,7 +29,7 @@ for f in files:
     data = []  # data rows for reuse
     row_type = {}  # type information for data
 
-    fn = 'metadata/' + f
+    fn = 'metadata' + os.path.sep + f
     with open(fn, encoding="utf8", errors='ignore') as csvfile:
 
         type_field_i = None  # index of 'Field Type' attribute, if it exists
@@ -100,7 +100,7 @@ for f in files:
             is_header = False  # already visited header
 
     # write fake data for this file
-    ofn = 'fakedata/' + f.replace('_metadata', '')
+    ofn = 'fakedata' + os.path.sep + f.replace('_metadata', '')
     outfile = open(ofn, 'wb')
 
     print(fn + "," + ofn)
