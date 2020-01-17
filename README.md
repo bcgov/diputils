@@ -1,5 +1,5 @@
 # diputils
-utilities to assist Data Innovation Program (DIP)
+Utilities to assist Data Innovation Program (DIP)
 
 ## Features
 
