@@ -1,6 +1,9 @@
 '''instructions to run: posix-style terminal:
 
-python3 metadata_list.py'''
+python3 metadata_list.py
+
+make sure to remove / replace wget
+'''
 
 import shutil
 import urllib3
@@ -36,11 +39,9 @@ else:
 def mv_csv_to_folder():
     # stuff metadata files in a folder
     for f in os.listdir('.'):
-        print("f in listdir:",f[-4:])
         try:
             if f.strip()[-4:] == '.csv':
                 src, dst = f, 'metadata' + sep + f
-                print("mv ", src, dst)
                 shutil.move(src, dst)
         except Exception:
             pass

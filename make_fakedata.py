@@ -3,6 +3,7 @@ import string
 import random
 import calendar
 from misc import *
+import csv_to_fixedwidth
 
 debug = False  # turn on for extra info
 
@@ -159,7 +160,8 @@ for f in files:
             tick(j, nrows_fake, ofn)
     outfile.close()
 
-    run('python3 csv_to_fw.py ' + ofn)
+    csv_to_fixedwidth('csv_to_fixedwidth', ofn)
+    # run('python3 csv_to_fw.py ' + ofn)
 
     ff_n = ofn[:-4] + '.dat'
     ddfn = ofn[:-4] + '.dd'
