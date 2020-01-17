@@ -31,10 +31,10 @@ This project is currently under development and actively supported by the DPD Pa
 ## Usage:
 
 #### get_metadata.py
-'''python3 get_metadata.py'''
+```python3 get_metadata.py```
 
 #### make_fakedata.py
-'''python3 make_fakedata.py'''
+```python3 make_fakedata.py```
 
 ## Relevant Repositories
 
