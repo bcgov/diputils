@@ -4,19 +4,19 @@ Utilities to assist Data Innovation Program (DIP)
 ## Features
 
 This package presently supports:
-* producing synthetic data resembling the data that reside within the Data Innovation Program's (DIP) Secure Research Environment
+* **producing synthetic data** resembling the data that reside within the Data Innovation Program's (DIP) Secure Research Environment
 
-Given that access to DIP data are restricted, synthetic data resembling the DIP data are useful for:
+Given that **access to DIP data are restricted**, synthetic data resembling the DIP data are useful for:
 * training purposes
 * sharing examples of data with partner ministries
 * troubleshooting code outside the SAE with the help from knowledge experts
 * demonstrations within the Digital Platforms and Data (DPD) Division 
 
-Properties of data 
+Properties of data in DIP environment
 - Zipped
-- Quite large, potentially up to tens of GB per file
+- Quite large, potentially **up to tens of GB per file**
 - Produced from DIP metadata available on BC Data Catalogue
-- Fixed width format, with data dictionary or header that includes field names and field widths
+- **Fixed width format** with data dictionary or header file specifying field names and widths
 
 ## Project Status
 
