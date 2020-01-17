@@ -1,7 +1,5 @@
 # diputils
-Utilities to support the [**Data Innovation Program** (DIP)](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program).
-
-This library is supported for Windows, Mac and Linux
+Utilities to support the [**Data Innovation Program** (DIP)](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program). Windows, Mac and Linux environments supported
 
 ## Features
 
