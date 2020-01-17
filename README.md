@@ -40,6 +40,7 @@ This project is currently under development and actively supported by the DPD Pa
 ```python3 make_fakedata.py```
 
 Optional arguments:
+
 ```python3 make_fakedata.py [minimum number of rows, per file] [maximum number of rows, per file]```
 * minimum number of rows, per file: lower bound for random number of rows of synthetic to generate
 * maximum number of rows, per file: upper bound for random number of rows of synthetic to generate
