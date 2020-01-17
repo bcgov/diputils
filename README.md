@@ -25,8 +25,11 @@ This project is currently under development and actively supported by the DPD Pa
 ## Contents by Directory:
 
 #### [/](.//)
-- get_metadata.py: fetch DIP metadata from BC Data Catalogue (BCDC)
-- make_fakedata.py: synthesize DIP data from the above metadata
+- **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
+- **make_fakedata.py**: synthesize DIP data from the above metadata
+- **csv_to_fixedwidth.py**: convert CSV data to "fixed width" format
+- **indent.py**: indent a code file
+- **misc.py**: shared functions
 
 ## Usage:
 
