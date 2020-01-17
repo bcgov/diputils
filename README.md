@@ -1,5 +1,5 @@
 # diputils
-Utilities to assist **Data Innovation Program** (DIP). Windows, Mac and Linux environments are supported
+Utilities to assist **Data Innovation Program** (DIP). Windows, Mac and Linux environments are supported.
 
 ## Features
 
