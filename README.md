@@ -10,7 +10,7 @@ Given that **access to DIP data are restricted**, synthetic data resembling the 
 * training purposes
 * sharing examples of data with partner ministries
 * troubleshooting code outside the SAE with the help from knowledge experts
-* demonstrations within the Digital Platforms and Data (DPD) Division 
+* demonstrations within Digital Platforms and Data (DPD) Division and with partner agencies
 
 Properties of data in DIP environment
 - Zipped
