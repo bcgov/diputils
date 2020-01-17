@@ -39,6 +39,11 @@ This project is currently under development and actively supported by the DPD Pa
 #### make_fakedata.py
 ```python3 make_fakedata.py```
 
+Optional arguments:
+```python3 make_fakedata.py [minimum number of rows, per file] [maximum number of rows, per file]```
+* minimum number of rows, per file: lower bound for random number of rows of synthetic to generate
+* maximum number of rows, per file: upper bound for random number of rows of synthetic to generate
+
 **Notes:** CSV format synthetic data (.csv) are supplied alongside zipped fixed-width format synthetic data (.zip) for comparison. In the actual DIP environment
 * data are provided in fixed-width format ONLY (no CSV files)
 * the data dictionaries don't typically appear in the same folder as the fixed-width files they're associated with. Software for matching fixed-width files with data dictionaries, will soon be provided in this repository 
