@@ -1,6 +1,5 @@
 # diputils
-Utilities to assist **Data Innovation Program** (DIP). Windows, Mac and Linux environments are supported.
-[DIP](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program)
+Utilities to assist the [**Data Innovation Program** (DIP)](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program). Windows, Mac and Linux environments are supported.
 
 ## Features
 
