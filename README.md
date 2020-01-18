@@ -34,10 +34,14 @@ This project is currently under development and actively supported by the DPD Pa
 ## Usage:
 
 #### get_metadata.py
+Terminal:
 ```python3 get_metadata.py```
+(Alternately, can open in Python IDLE and select RUN from menu, or press F5 key)
 
 #### make_fakedata.py
+Terminal:
 ```python3 make_fakedata.py```
+(Alternately, can open in Python IDLE and select RUN from menu, or press F5 key)
 
 Optional arguments:
 
