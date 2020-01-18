@@ -24,4 +24,8 @@ open(in_fn, 'wb').write(('\n'.join(lines)).encode())
 
 ''' flesh this file out to be an example of "command-line
 agnostic" pattern? key-value store of args, with default keys
-applied to terms in form of x (should be y:x)'''
+applied to terms in form of x (should be y:x)
+
+also:
+-- "autodocumenting" pattern
+-- language agnostic pattern'''
