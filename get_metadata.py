@@ -1,32 +1,20 @@
-'''instructions to run: posix-style terminal:
+'''instructions to run: terminal:
 
-python3 metadata_list.py
-
-make sure to remove / replace wget
-'''
-
+python3 metadata_list.py'''
 import shutil
-import urllib3
+import requests
 from misc import *
 sep = os.path.sep
 
 
-def get_lines(url):
-    # get lines from a web page
-    http = urllib3.PoolManager()
-    html = http.request('GET', url).data
-    return str(html).split("\\n")
-
-
 def get(url):
-    http = urllib3.PoolManager()
-    html = http.request('GET', url).data
-    return str(html)
+    # get lines from a web page
+    html = requests.get(url).content
+    return html
 
 
 def get_lines(url):
-    # get lines from a web page
-    return get(url).split("\\n")
+    return get(url).decode().split("\n")
 
 
 # make metadata/ folder
@@ -87,8 +75,7 @@ for line in lines:
 
         print(name + ',' + dataset)
 
-        ds_lines = [line.rstrip() for
-                    line in os.popen("wget -qO- " + dataset).readlines()]
+        ds_lines = [line.rstrip() for line in get_lines(dataset)]
 
         for ds_line in ds_lines:
             if len(ds_line.split("/download/")) > 1:
