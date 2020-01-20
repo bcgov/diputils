@@ -22,10 +22,11 @@ lines = [((' ' * shift_width) +
          line.decode('utf-8').rstrip()) for line in lines]
 open(in_fn, 'wb').write(('\n'.join(lines)).encode())
 
-''' flesh this file out to be an example of "command-line
-agnostic" pattern? key-value store of args, with default keys
+'''looking ahead: can use this file as example to apply:
+
+-- "autodocumenting" pattern
+-- language agnostic pattern
+-- commmand-line agnostic pattern: key-value store of args, with default keys
 applied to terms in form of x (should be y:x)
 
-also:
--- "autodocumenting" pattern
--- language agnostic pattern'''
+-- in-memory agnostic pattern'''
