@@ -28,5 +28,5 @@ open(in_fn, 'wb').write(('\n'.join(lines)).encode())
 -- language agnostic pattern
 -- commmand-line agnostic pattern: key-value store of args, with default keys
 applied to terms in form of x (should be y:x)
-
+-- inputs and outputs specified
 -- in-memory agnostic pattern'''
