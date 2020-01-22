@@ -80,7 +80,6 @@ for line in lines:
         for ds_line in ds_lines:
             if len(ds_line.split("/download/")) > 1:
                 ds_line = ds_line.strip()
-                # print("\t" + ds_line)
 
                 # check expected formatting
                 if ds_line[0:7] != '<a href':
@@ -93,10 +92,8 @@ for line in lines:
                 fname = fpath.split("/")[-1].strip()
 
                 print('\t' + fname)
-                cmd = "wget " + fpath
-
-                if not os.path.exists("metadata" + sep + fname):
-                    run(cmd)
+                ofn = 'metadata' + sep + fname
+                open(ofn, 'wb').write(get(fpath))
 
 # stuff metadata files into folder
 mv_csv_to_folder()
