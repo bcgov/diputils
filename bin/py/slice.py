@@ -37,9 +37,9 @@ while True:
         # write out sliced header
         for i in range(0, len(keep_i)):
             if i>0:
-                of.write(",")
-            of.write(f_names[keep_i[i]])
-        of.write("\n")
+                of.write(",".encode())
+            of.write(f_names[keep_i[i]].encode())
+        of.write("\n".encode())
     else:
         w = line.split(",")
         if len(w) != n_f:
@@ -57,7 +57,7 @@ while True:
         outs = ",".join(outl)
         #print w
         #print(outs)
-        of.write(outs+"\n")
+        of.write((outs+"\n").encode())
     ci += 1
     if ci % 1000 == 0:
         ttt = tt
