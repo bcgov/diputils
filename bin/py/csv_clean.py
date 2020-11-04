@@ -23,6 +23,9 @@ for row in reader:
     lines.append(row)
 print(count)
 
+if len(count.keys()) > 1:
+    print("Error: ragged array or messy data?"); sys.exit(1)
+
 hdr = lines[0]
 lines = lines[1:]
 
@@ -39,4 +42,5 @@ f.write((','.join(hdr)).encode())
 for line in lines:
     f.write(('\n' + ','.join(line)).encode())
 
+print("+w " + args[1] + "_clean.csv")
 f.close()
