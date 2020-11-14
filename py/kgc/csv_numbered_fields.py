@@ -1,6 +1,7 @@
 # write new version of csv with numbered (not named) fields
 import os
 import sys
+args = sys.argv
 
 lines = open(args[1]).readlines()
 lines = [line.strip() for line in lines]
