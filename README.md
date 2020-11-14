@@ -17,6 +17,8 @@ This project is currently under development and actively supported by the DPD Pa
 
 ## Contents by Directory:
 
+Not complete, please check back later
+
 #### [/](.//)
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
 - **make_fakedata.py**: synthesize DIP data from the above metadata
