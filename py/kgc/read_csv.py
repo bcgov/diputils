@@ -23,7 +23,7 @@ def read_csv(file_name):
             else:
                 print("w[i]", w[i])
                 print("str(i)", str(i))
-                err("expected w[i] = str(i)")
+                print("WARNING: expected w[i] = str(i)")
 
     # process data
     for i in range(1, len(lines)):
