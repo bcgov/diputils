@@ -27,7 +27,7 @@ def assert_exists(f):
     if not exists(f):
         err("could not find req'd file: " + str(f))
 
-def load_fields(args): # load records and index by studyid
+def load_fields_and_index_by_studyid(args): # load records and index by studyid
     print("load_fields " + str(args))
     dat, fn, load_fields = {}, args[0], args[1:]
     assert_exists(fn)
@@ -35,6 +35,8 @@ def load_fields(args): # load records and index by studyid
     fields = f.readline().strip().split(",") # read the header
     field = {fields[i] : i for i in range(0, len(fields))}
     print("fields", fields)
+    if len(args) == 1:
+        load_fields = fields
     # not in Kansas anymore: comment out: # if 'studyid' not in fields: err("req'd field: studyid")
     # make sure other required fields are present
     for lf in load_fields:
