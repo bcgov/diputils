@@ -13,6 +13,7 @@ def err(m):
 
 
 def run(cmd):
+    print(cmd)
     a = os.system(cmd)
     if a != 0:
         err("command failed: " + cmd.strip())
