@@ -8,5 +8,6 @@ lines = [line.strip() for line in lines]
 
 hdr = lines[0].split(',')
 hdr = ','.join([str(i) for i in range(len(hdr))])
+lines[0] = hdr
 
 open(args[1] + "_numbered_fields.csv", "wb").write(('\n'.join(lines)).encode())
