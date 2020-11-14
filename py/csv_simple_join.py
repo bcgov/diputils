@@ -27,8 +27,8 @@ if check:
         if fields2[i] == 'studyid':
             s_f_i = i
 
-of.write(",".join(fields1)); of.write(",")
-of.write(",".join(fields2)); of.write("\n"); ci = 0
+of.write(",".join(fields1).encode()); of.write(",".encode())
+of.write(",".join(fields2).encode()); of.write("\n".encode()); ci = 0
 while True:
     line1 = f1.readline();  line2 = f2.readline()
     if not line2: break
@@ -41,8 +41,8 @@ while True:
     if len(w1) != n_f1:
         err("")
 
-    of.write(",".join(w1)); of.write(",")
-    of.write(",".join(w2)); of.write("\n")
+    of.write(",".join(w1).encode()); of.write(",".encode())
+    of.write(",".join(w2).encode()); of.write("\n".encode())
 
     ci += 1
     if ci % 10000 == 0:
