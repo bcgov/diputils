@@ -1,3 +1,4 @@
+# write new version of csv with numbered (not named) fields
 import os
 import sys
 
