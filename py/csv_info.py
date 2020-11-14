@@ -3,7 +3,6 @@ import os
 import sys
 from misc import load_fields
 args = sys.argv
-info = len(args) > 3
 dat = load_fields("../test/merge.csv" if len(args) < 2 else args[1])
 
 types = {}
@@ -18,11 +17,12 @@ for k in dat.keys():
     t = "float" if is_float else "str"
     lsd = len(set(d))
     if lsd > 1:
-        if info:
-            print(t, k, lsd if lsd > 12 else set(d))
+        print(t, k, lsd if lsd > 12 else set(d))
         if not t in types:
             types[t] = []
         types[t].append(k)
+
+sys.exit(0)
 
 if len(args) < 3:
     print(types)
