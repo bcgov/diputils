@@ -21,6 +21,8 @@ def read_csv(file_name):
             if w[i] == 'class':
                 class_label = []
             else:
+                print("w[i]", w[i])
+                print("str(i)", str(i))
                 err("expected w[i] = str(i)")
 
     # process data
