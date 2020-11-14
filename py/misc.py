@@ -35,7 +35,7 @@ def load_fields(args): # load records and index by studyid
     fields = f.readline().strip().split(",") # read the header
     field = {fields[i] : i for i in range(0, len(fields))}
     print("fields", fields)
-    if 'studyid' not in fields: err("req'd field: studyid")
+    # not in Kansas anymore: comment out: # if 'studyid' not in fields: err("req'd field: studyid")
     # make sure other required fields are present
     for lf in load_fields:
         if lf not in fields: err("req'd field: " + str(lf))
