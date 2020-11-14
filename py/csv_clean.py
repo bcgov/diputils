@@ -1,4 +1,4 @@
-# this script not finished
+# Falliable method for cleaning up CSV data: this script not finished
 # read csv data (use this one for small, possibly irregular files)
 import os
 import sys
