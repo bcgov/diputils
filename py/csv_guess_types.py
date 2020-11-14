@@ -1,4 +1,4 @@
-# guess data types of cols of csv
+# guess data types of cols of csv. Ignore data with no info (one outcome only)
 import os
 import sys
 from misc import load_fields
