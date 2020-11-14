@@ -1,7 +1,6 @@
 Gui features included:
 * re-centering (click on point to re-centre)
-* band-switching (assign 3-d coordinates: e.g. r1, g2, b3)
-
+* band-switching (assign 3-d coordinates: e.g. r0<return>, g1<return>, b1<return> to assign first three bands to x, y, z for the 3d vis
 
 ### Notes
 * Code samples tested on Mac and Linux so far, should be windows compatible
