@@ -1,3 +1,4 @@
+# apply numeric codes to each col of a csv
 import os
 import sys
 from misc import *
@@ -19,6 +20,11 @@ for f in fields:
 
 f = wopen(args[1] + "_code.csv")
 f.write((','.join(names)).encode())
-for i in range(0, len(d[fields[0]])):
-    f.write(('\n' + ','.join([d[fields[j] for j in range(len(fields))]])).encode())
+for i in range(0, len(d[list(fields)[0]])):
+    row = [     d[list(fields)[j]][i] for j in range(len(fields))]
+    row = [lookup[list(fields)[j]][row[j]] for j in range(len(fields))]
+    row = [str(x) for x in row]
+    f.write(('\n' + ','.join(row)).encode())
+
+
 f.close()
