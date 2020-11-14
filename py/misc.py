@@ -27,6 +27,23 @@ def assert_exists(f):
     if not exists(f):
         err("could not find req'd file: " + str(f))
 
+
+def load_fields(fn): # simple load fields, index by field name
+    lines = open(fn).readlines()
+    hdr = lines[0].split(",")
+    hdr = [x.strip().lower() for x in hdr]
+    n = len(hdr)
+    data = {x: [] for x in hdr}
+    for i in range(1, len(lines)):
+        w = lines[i].strip().split(',')
+        if len(w) != n: print("Error:", w)
+        w = [x.strip() for x in w]
+        for j in range(0, n): data[hdr[j]].append(w[j])
+    return data
+
+
+
+
 def load_fields_and_index_by_studyid(args): # load records and index by studyid
     print("load_fields " + str(args))
     dat, fn, load_fields = {}, args[0], args[1:]
