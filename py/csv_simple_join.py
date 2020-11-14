@@ -48,7 +48,8 @@ while True:
     if ci % 10000 == 0:
         ttt = tt
         tt = time.time()
-        print ci/1000, "1/2 k, S/10 k: ", tt-ttt
+        print(ci/1000, "1/2 k, S/10 k: ", tt-ttt)
+
 of.close()
 f1.close()
 f2.close()
