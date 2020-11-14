@@ -1,4 +1,7 @@
-<img src="title.png" alt="title slide" width="555">
+Gui features included:
+* re-centering (click on point to re-centre)
+* band-switching (assign 3-d coordinates: e.g. r1, g2, b3)
+
 
 ### Notes
 * Code samples tested on Mac and Linux so far, should be windows compatible
