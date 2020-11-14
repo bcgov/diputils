@@ -26,4 +26,4 @@ if len(args) < 3:
     print(types)
 else:
     if args[2] in ['str', 'float']:
-        print(types[args[2]])
+        print(','.join(types[args[2]]))
