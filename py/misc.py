@@ -54,6 +54,41 @@ def load_fields(args): # load records and index by studyid
     return dat, load_fields
 
 
+def printw(fn):
+    print("+w " + fn.strip())
+
+def printr(fn):
+    print("+r " + fn.strip())
+
+
+# open required output file, assert open
+def wopen(fn):
+    o_f = open(fn, "wb")
+    if not o_f:
+        err("failed to open output file: " + fn)
+    printw(fn)
+    return o_f
+
+def ropen(fn):
+    i_f = open(fn)
+    if not i_f:
+        err("failed to open input file: " + fn)
+    printr(fn)
+    return i_f
+
+
+args = sys.argv
+
+# calculate histogram for a list of values
+def hist(x):
+    h = {}
+    for i in range(0, len(x)):
+        d = x[i]
+        if d not in h:
+            h[d] = 0.
+        h[d] += 1.
+    return h
+
 
 
 
