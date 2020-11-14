@@ -6,6 +6,9 @@ Gui features included:
 * Code samples tested on Mac and Linux so far, should be windows compatible
 * [please click here to see slides](presentation.pdf)
 
+## Setup
+setup.sh contains dependency install line
+
 ## Running the codes at a terminal:
 ```
 python3 kgc.py [input csv file] [number of K-nearest neighbours (defaults to math.ceil(math.sqrt(N))]
