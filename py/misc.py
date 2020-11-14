@@ -119,3 +119,76 @@ def tick(index=None, total=None, message=None):
             sys.stderr.write(' '.join([str(i) for i in info]))
         else:
             print("dt", dt)
+
+
+# move towards: "in-memory agnostic"
+
+# determine whether parameter is a file or in-memory / data
+class csv_reader: # benchmark it
+    def __init__(self, data):
+        self.ci = 0
+        self.data = data
+        self.fields = None
+        self.n_fields = -1
+        self.data_file = None
+        csv.register_dialect('my',
+                             delimiter = ",",
+                             quoting = csv.QUOTE_ALL,
+                             skipinitialspace = True)
+        if type(data) == str:
+            if exists(data):
+                self.data_file = open(data)
+            else:
+                err("failed to open input file: " + data)
+        else:
+            if type(data) == list:
+                self.data_file = None
+            else:
+                err("unknown data type: " + str(type(data)))
+
+    def hdr(self):
+        if self.data_file:
+            fields = self.data_file.readline().strip().split(',')
+            self.n_fields = len(fields)
+            return fields
+        else:
+            return self.row()
+
+    def row(self):
+        line = (self.data_file.readline() if (self.data_file is not None)
+                else (self.data[self.ci] if self.ci < len(self.data)
+                else None))
+        if not self.data_file:
+            self.ci += 1
+        if not line:
+            return line
+        fields = line.strip().split(',')
+        if len(fields) == self.n_fields:
+            return fields
+        else:
+            return [row for row in csv.reader([line])][0]
+
+
+'''
+r = csv_reader("test/test.csv")
+fields = r.hdr()
+print(fields)
+while True:
+    row = r.row()
+    if row:
+        print(row)
+    else:
+        break
+'''
+'''
+r = csv_reader(["fieldname_bo,fieldname_bo", "mo,bo", "ho,zo", "fo,po"])
+fields = r.hdr()
+print(fields)
+while True:
+    row = r.row()
+    if row:
+        print(row)
+    else:
+        break
+'''
+
