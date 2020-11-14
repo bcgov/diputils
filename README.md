@@ -1,16 +1,9 @@
-# diputils
+# diutils
 Utilities to support the [**Data Innovation Program** (DIP)](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program). Windows, Mac and Linux environments supported
 
 ## Features
 
-This package presently supports:
-* **producing synthetic data** resembling the data that reside within the Data Innovation Program's (DIP) Secure Research Environment
-
-Given that **access to DIP data are restricted**, synthetic data resembling the DIP data are useful for:
-* training purposes
-* sharing examples of data with partner ministries
-* troubleshooting code outside the SAE with the help from knowledge experts
-* demonstrations within Digital Platforms and Data (DPD) Division and with partner agencies
+This package presently supports several big-data friendly operations for tabular data
 
 Properties of data in DIP environment
 - Zipped
@@ -23,6 +16,8 @@ Properties of data in DIP environment
 This project is currently under development and actively supported by the DPD Partnerships and Capacity (PAC) branch
 
 ## Contents by Directory:
+
+Not complete, please check back later
 
 #### [/](.//)
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
