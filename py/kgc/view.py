@@ -104,7 +104,8 @@ print("npoints", len(points))
 for i in range(0, len(points)):
     p = points[i]
     # plot each point in 3d with vpython's "sphere"
-    s = sphere(pos=vector(p[0], p[1], p[2]),
+    print(p)
+    s= sphere(pos=vector(p[0], p[1], p[2]),
                           radius=0.033,
                           color=colours[my_label[i]]) # .cyan))
     spheres.append(s)
