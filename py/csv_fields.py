@@ -12,7 +12,7 @@ if len(args) <= 2:
     s = ""
     for f in fields:
         s += " " + f
-    print s
+    print(s)
 else:
     for f in fields:
-        print "  ", f.strip()
+        print(" ", f.strip())
