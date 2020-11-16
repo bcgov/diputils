@@ -111,10 +111,10 @@ int main(int argc, char ** argv){
 
     while(getline(f_f, s)){
       //f_f.getline(s))
-      trim(s);
+      trim(s); // for each line of the file
       lower(s);
       const char * s_c = s.c_str();
-      words = split(s);
+      words = split(s); // split into words
       if(l_i == 0){
         nf = words.size();
         int selected = false;
@@ -154,6 +154,7 @@ int main(int argc, char ** argv){
           }
         }
         trim(words[s_f_i]);
+        cout << "[" << words[s_f_i] << "]" << endl;
         if(false && words[s_f_i].length() != 10){
           cout << words << endl;
           cout << "line number: " << l_i << endl;
