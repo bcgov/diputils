@@ -154,7 +154,7 @@ int main(int argc, char ** argv){
           }
         }
         trim(words[s_f_i]);
-        cout << "[" << words[s_f_i] << "]" << endl;
+        // this would plot field under consideration: // cout << "[" << words[s_f_i] << "]" << endl;
         if(false && words[s_f_i].length() != 10){
           cout << words << endl;
           cout << "line number: " << l_i << endl;
