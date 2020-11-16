@@ -19,7 +19,7 @@ int main(int argc, char ** argv){
   if(argc < 4) err("usage: csv_select [file to filter by] [field name] [file to filter] .. [last file to filter]");
 
   string select_filename(argv[1]); // name of file to select by
-  mfile f_s(select_filename, "rb"); // if this was too big to keep in mem, could use rewind() to re-scan it
+  mfile f_s(select_filename, (char *)(void *)"rb"); // if this was too big to keep in mem, could use rewind() to re-scan it
   string s_f_name(argv[2]);
   unsigned int n_files = argc - 3;
   vector<string> file_names;
