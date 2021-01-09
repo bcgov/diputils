@@ -13,7 +13,13 @@ Properties of data in DIP environment
 
 ## Project Status
 
-This project is currently under development and actively supported by the DPD Partnerships and Capacity (PAC) branch
+This project is currently developed and supported by DPD Partnerships and Capacity (PAC) branch
+
+## Projects Supported incl.
+CYMH
+DIP Development
+Children in Care
+Special needs project
 
 ## Contents by Directory:
 
