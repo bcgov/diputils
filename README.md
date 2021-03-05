@@ -16,14 +16,11 @@ Properties of data in DIP environment
 This project is currently developed and supported by DPD Partnerships and Capacity (PAC) branch
 
 ## Projects Supported incl.
-CYMH
-DIP Development
-Children in Care
-Special needs project
+CYMH / DIP Development proeject / Children in Care (in care network) / Educ. Special needs project / Race based data initiative (RBD)
 
 ## Contents by Directory:
 
-Not complete, please check back later
+THIS REPO HAS BEEN SLEEPING BUT IT WILL WAKE UP...STAY TUNED FOR UPDATES / WORKFLOW EXAMPLES..
 
 #### [/](.//)
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
