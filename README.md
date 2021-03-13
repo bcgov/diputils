@@ -1,5 +1,5 @@
-# diutils
-Utilities to support the [**Data Innovation Program** (DIP)](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program). Windows, Mac and Linux environments supported
+# diputils
+Utilities to support the [**Data Innovation Program** (DIP)](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program). Generally Windows, Mac and Linux environments supported, some aspects may require POPDATA SRE to run
 
 ## Features
 
@@ -13,11 +13,14 @@ Properties of data in DIP environment
 
 ## Project Status
 
-This project is currently under development and actively supported by the DPD Partnerships and Capacity (PAC) branch
+This project is currently developed and supported by DPD Partnerships and Capacity (PAC) branch
+
+## Projects Supported incl.
+CYMH / DIP Development proeject / Children in Care (in care network) / Educ. Special needs project / Race based data initiative (RBD)
 
 ## Contents by Directory:
 
-Not complete, please check back later
+THIS REPO HAS BEEN SLEEPING BUT IT WILL WAKE UP...STAY TUNED FOR UPDATES / WORKFLOW EXAMPLES..
 
 #### [/](.//)
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
