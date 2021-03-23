@@ -9,7 +9,6 @@
 
 #include<map>
 #include<set>
-#include<queue>
 #include<vector>
 #include<string>
 #include<memory>
@@ -26,14 +25,6 @@
 using namespace std;
 
 #include <stdio.h> /* defines FILENAME_MAX */
-#ifdef WINDOWS
-#include <direct.h>
-#define _cwd _getcwd
-#else
-#include <unistd.h>
-#define _cwd getcwd
-#endif
-
 void rewind(ifstream &a);
 
 /* split a string (a-la python) */
