@@ -66,11 +66,10 @@ int main(int argc, char ** argv){
   string newline("\n");
   while(getline(infile2, d)){
     row.clear(); // clear row then add fields, subtract start[0] to handle start-index of 0 or 1
-    for0(i, n_f) row.push_back(d.substr(start[i] - start[0], length[i]));
-    for0(i, n_f) row[i] = trim(row[i]);
+    for0(i, n_f) row.push_back(d.substr(start[i] - start[0], length[i])); // add each field
+    for0(i, n_f) row[i] = trim(row[i]); // strip leading and trailing whitespace
     if(ci++ > 0) outfile << newline;
     outfile << join(",", row);
   }
-
   return 0;
 }
