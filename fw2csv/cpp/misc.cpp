@@ -1,9 +1,4 @@
 #include"misc.h"
-string cwd(){
-  char s[PATH_MAX];
-  char * v = _cwd(s, PATH_MAX);
-  return string(s);
-}
 
 /* split a string (a-la python) */
 vector<string> split(string s, char delim){
@@ -140,15 +135,3 @@ FILE * wopen(string fn){
   if(!f) err("failed to open file for writing");
   return f;
 }
-
-
-// priority_queue max-first, we want min
-bool operator < (const f_i &a, const f_i &b){
-  return a.f > b.f;
-}
-
-/*
-bool operator < (const f_ij &a, const f_ij &b){
-  return a.f > b.f;
-}
-*/

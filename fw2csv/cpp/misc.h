@@ -4,7 +4,6 @@
 /* shorthand for for loops from 0 to N */
 #define for0(i,n) for(i = 0; i < n; i++)
 
-#define STR_MAX 16384
 #define mtx_lock pthread_mutex_lock
 #define mtx_unlock pthread_mutex_unlock
 
@@ -36,8 +35,6 @@ using namespace std;
 #endif
 
 void rewind(ifstream &a);
-
-string cwd();
 
 /* split a string (a-la python) */
 vector<string> split(string s, char delim);
@@ -164,32 +161,5 @@ size_t size(FILE * f);
 size_t fsize(string fn);
 bool exists(string fn);
 
-// in-memory reader (writer to be implemented)
-// note this should be able to modulate between available protocols (like ifstream,
-// ofstream, etc. , fwrite, fread, if available)
-
 FILE * wopen(string fn);
-
-
-
-// float-int tuple for sorting distances
-class f_i{
-  public:
-  float f;
-  size_t i;
-  f_i(float g = 0., size_t h = 0){
-    // constructor. 0-index is null
-    f = g;
-    i = h;
-  }
-  f_i(const f_i &a){
-    // copy constructor
-    f = a.f;
-    i = a.i;
-  }
-};
-
-bool operator < (const f_i &a, const f_i &b);
-
-
 #endif
