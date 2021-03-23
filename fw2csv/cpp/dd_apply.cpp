@@ -2,12 +2,10 @@
 using namespace std;
 
 int main(int argc, char ** argv){
- string ddf, dtf, ofn;
-
+  string ddf, dtf, ofn;
+  
   if(argc < 3){
-    ddf = string("moh_dip_pharmanet_dsp.rpt.dd");
-    dtf = string("moh_dip_pharmanet_dsp.rpt.dat");
-    // err("usage: dd_apply.cpp [data dictionary.csv] [data input.dat]");
+    err("usage: dd_apply.cpp [data dictionary.csv] [data input.dat]");
   }
   else{
     ddf = string(argv[1]);
@@ -15,6 +13,7 @@ int main(int argc, char ** argv){
   }
 
   ofn = string(dtf + string("_dd_apply.csv"));
+  
   cout << "data dictionary file: " << ddf << endl;
   cout << "data input file: " << dtf << endl;
   cout << "output file: " << ofn << endl;
@@ -33,7 +32,6 @@ int main(int argc, char ** argv){
     vector<string> w(split(d, ','));
     for(it = w.begin(); it != w.end(); it++){
       *it = strip(*it);
-      //std::transform(it->begin(), it->end(), it->begin(), ::tolower); // to lower case
     }
     if(ci==1){
       if(w[0] != string("start")) err(string("expected field 0 ") + w[0]);
@@ -73,10 +71,11 @@ int main(int argc, char ** argv){
     row.clear(); // clear row then add fields, subtract start[0] to handle start-index of 0 or 1
     for0(i, n_f) row.push_back(d.substr(start[i] - start[0], length[i]));
     for0(i, n_f) row[i] = trim(row[i]);
-    if(ci++ > 0) outfile << newline;
+    if(ci++ > 0){
+      outfile << newline;
+    }
     outfile << join(",", row);
   } 
-
   return 0;
 }
 
