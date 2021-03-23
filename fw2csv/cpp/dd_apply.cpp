@@ -3,17 +3,13 @@ using namespace std;
 
 int main(int argc, char ** argv){
   string ddf, dtf, ofn;
-  
-  if(argc < 3){
-    err("usage: dd_apply.cpp [data dictionary.csv] [data input.dat]");
-  }
+
+  if(argc < 3) err("usage: dd_apply.cpp [data dictionary.csv] [data input.dat]");
   else{
     ddf = string(argv[1]);
     dtf = string(argv[2]);
   }
-
   ofn = string(dtf + string("_dd_apply.csv"));
-  
   cout << "data dictionary file: " << ddf << endl;
   cout << "data input file: " << dtf << endl;
   cout << "output file: " << ofn << endl;
@@ -55,6 +51,7 @@ int main(int argc, char ** argv){
 
   ifstream infile2(dtf);
   if(!infile2.is_open()) err(string("failed to open file") + dtf);
+
   ofstream outfile(ofn);
   if(!outfile.is_open()) err(string("failed to write-open file:") + ofn);
 
@@ -71,11 +68,9 @@ int main(int argc, char ** argv){
     row.clear(); // clear row then add fields, subtract start[0] to handle start-index of 0 or 1
     for0(i, n_f) row.push_back(d.substr(start[i] - start[0], length[i]));
     for0(i, n_f) row[i] = trim(row[i]);
-    if(ci++ > 0){
-      outfile << newline;
-    }
+    if(ci++ > 0) outfile << newline;
     outfile << join(",", row);
-  } 
+  }
+
   return 0;
 }
-
