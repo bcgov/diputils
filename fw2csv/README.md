@@ -1,5 +1,5 @@
-#fw2csv
-Fixed width to csv converter. Doesn't use memory so it won't bonk on a large file. However, run it on an SSD or faster storage or it will be slow.
+# fw2csv
+Fixed width to csv converter. Doesn't use memory so it won't bonk on a large file. However, run it on an SSD or faster storage or it will be slow. [Click here to see elegant C++ code](https://github.com/bcgov/diputils/blob/master/fw2csv/cpp/dd_apply.cpp)
 
 ## setup
 For MacOS type:
