@@ -10,9 +10,7 @@ using arrow::StringBuilder;
 arrow::Status main_fun(int argc, char ** argv){
   string ddf, dtf, ofn;
   if(argc < 3){
-    ddf = string("moh_dip_pharmanet_dsp.rpt.dd");
-    dtf = string("moh_dip_pharmanet_dsp.rpt.dat");
-    // err("usage: dd_apply.cpp [data dictionary.csv] [data input.dat]");
+    err("usage: dd_apply.cpp [data dictionary.csv] [data input.dat]");
   }
   else{
     ddf = string(argv[1]);
