@@ -1,4 +1,3 @@
-#
 args = commandArgs(trailingOnly=TRUE)
 if(length(args)==0){
   stop("csv_plot.R [csv file name]");
