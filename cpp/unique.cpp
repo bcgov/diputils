@@ -1,4 +1,5 @@
-/* 20190531 unique.cpp: filter for unique values of several cols, whatever they are.. */
+/* 20190531 unique.cpp: filter for unique values of several cols, whatever they are..
+this version is case sensitive..*/
 #include"misc.h"
 using namespace std;
 
@@ -15,7 +16,7 @@ int main(int argc, char ** argv){
   set<str> d;
   for(int i = 0; i < n_fields; i++){
     string f(argv[i + 2]);
-    lower(f);
+    // lower(f);
     trim(f);
     cout <<"\tfilter on col: " << f << endl;
     d.insert(f);
@@ -42,7 +43,7 @@ int main(int argc, char ** argv){
   // get the field names
   getline(dfile, line);
   trim(line);
-  lower(line);
+  // lower(line);
   row = split(line, ',');
 
   set<int> indices;
@@ -61,7 +62,7 @@ int main(int argc, char ** argv){
   while(getline(dfile, line)){
     trim(line);
     if(n_fields == 0){
-      lower(line);
+      // lower(line);
       if(unique.count(line) < 1){
         unique[line] = line;
       }
@@ -79,7 +80,7 @@ int main(int argc, char ** argv){
         ii += 1;
       }
       trim(idx);
-      lower(idx);
+      //lower(idx);
       if(unique.count(idx) < 1){
         unique[idx] = line;
       }
