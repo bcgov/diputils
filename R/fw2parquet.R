@@ -1,3 +1,4 @@
+# not a very efficient or useful operation. Proof of concept!
 library(arrow) # https://arrow.apache.org/docs/r/
 library(stringr)
 library(data.table)
