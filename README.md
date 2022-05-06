@@ -14,7 +14,8 @@ Properties of data in DIP environment
 This project is currently developed and supported by DPD Partnerships and Capacity (PAC) branch and partners such as BC Wildfire Service (BCWS) Predictive Services Unit 
 
 ## Projects Supported incl.
-* Dip projects: CYMH / DIP Development proeject / Children in Care (in care network) / Educ. Special needs project / Race based data initiative (RBD) 
+* Dip projects: CYMH / DIP Development proeject / Children in Care (in care network) / Educ. Special needs project
+* Race based data initiative (RBD) 
 * BC Wildfire Service (BCWS) Fuel Type Layer Project
 
 ## Contents by Directory:
