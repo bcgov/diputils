@@ -18,10 +18,10 @@ This project is currently developed and supported by DPD Partnerships and Capaci
 * BC Wildfire Service (BCWS) Fuel Type Layer Project
 
 ## Contents by Directory:
-**cpp**: c++ based scripts
-**py**: python based scripts
-**R**: R based scripts
-**c**: C based scripts
+* **cpp**: c++ based scripts
+* **py**: python based scripts
+* **R**: R based scripts
+* **c**: C based scripts
 
 #### [/](.//)
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
