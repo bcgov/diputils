@@ -1,3 +1,17 @@
+#  Copyright 2019 Province of British Columbia
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
 #!/usr/bin/env python
 import os
 import sys
@@ -19,7 +33,6 @@ def add_clean_job(cmd):
 # need to do the wrapping (as we did for py) for R programs, too!
 
 sys_s, sys_n = os.popen("uname -a").read().strip().lower(), None
-print("sys_s", sys_s)
 if sys_s[0:6] == 'cygwin': sys_n = 'cygwin'
 elif sys_s[0:5] == 'mingw': sys_n = 'mingw'
 elif sys_s[0:5] == 'linux': sys_n = 'linux'
@@ -70,8 +83,7 @@ def compile(f):
         clean_cmds += ("; dent " + f)
         cmd = 'g++ -w -O4 -march=native -flto -o ' + fn + '.exe ' + f
         if ext == 'cpp': cmd += ' cpp/misc.cpp'
-        if sys_n == 'cygwin':
-            cmd += ' -lopengl32 -lglu32 -lgdi32'
+        cmd += ' -lopengl32 -lglu32 -lgdi32'
         if (not build) or (fn == build):
             print('\t' + cmd)
             cmds += " " + cmd # add_job(cmd) # a = os.system(cmd) # note: didn't use run because compiling might break   
