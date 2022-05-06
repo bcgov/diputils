@@ -1,6 +1,4 @@
 # diputils
-Small change to README. 
-
 Utilities to support the [**Data Innovation Program** (DIP)](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program). Generally Windows, Mac and Linux environments supported, some aspects may require POPDATA SRE to run
 
 ## Features
