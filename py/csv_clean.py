@@ -1,5 +1,8 @@
-# Falliable method for cleaning up CSV data: this script not finished
-# read csv data (use this one for small, possibly irregular files)
+'''Falliable method for cleaning up CSV data: this script not finished
+ read csv data (use this one for small, possibly irregular files)
+
+ 20220506 can use this for replacing comma with ; so that some dumber
+ (but faster) C/C++  programs will be able to read the result'''
 import os
 import sys
 import csv
@@ -12,7 +15,6 @@ if len(args) < 2:
 lines = []
 csv_file = open(args[1]) 
 reader = csv.reader(csv_file, delimiter=',')
-
 
 count = {}
 for row in reader:
