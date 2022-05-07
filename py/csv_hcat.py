@@ -44,5 +44,5 @@ if len(X) != len(Y):
     err('files are of different length')
 
 print('+w', of)
-open(of, 'wb').write(('\n'.join([x[i] + ',' + y[i] for i in range(max(len(X), len(Y)))])).encode())
+open(of, 'wb').write(('\n'.join([X[i] + ',' + Y[i] for i in range(max(len(X), len(Y)))])).encode())
 print('success')
