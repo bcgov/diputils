@@ -36,6 +36,7 @@ if exist(of):
 
 def get(f):
     Z = [x.strip() for x in open(f).read().strip().split('\n')]
+    return Z
 
 X, Y = [get(x) for x in args[1:3]]
 
