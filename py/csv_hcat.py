@@ -19,7 +19,7 @@ Yikes!
 import os
 import sys
 args = sys.argv
-exist = os.path.exist
+exist = os.path.exists
 
 def err(m):
     print('Error: ' + m); sys.exit(1)
