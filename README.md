@@ -125,7 +125,7 @@ For example, if my user name was bob, the terminal should come back and say:
 This operation may be quite slow and require some manual intervention. Also the process here is likely to only cover some fraction of available 
 data sets as new ones have been added since, and there may be issues due to formatting updates
 
-#### copy a cohort file (csv with studyid col) to the tmp folder:####
+#### copy a cohort file (csv with studyid col) to the tmp folder: ####
 
 ```cp /cygdrive/r/.../cohort.csv .```
 
@@ -205,7 +205,6 @@ download, fetch, unpack, clean, concatenate, and analyze pharmanet data for a co
 Please contact Ashlin.Richardson@gov.bc.ca for assistance or to provide feedback
 
 ## Contributors
-
 
 ## License
 
