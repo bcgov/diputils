@@ -14,16 +14,19 @@ This package presently supports several big-data friendly operations for tabular
 * **Language agnostic** using a quick and dirty approach: borrowing from the Unix tradition by making procedures (written in any langauge) available (from any language) using the system interface
 
 In R: 
+
 ```system("command_to_run")```
 
 In C/C++:
+
 ```system("command to run")```
 
 In python:
-```import os
-os.system("command_to_run")```
 
- 
+```
+import os; os.system("command_to_run")
+```
+
 ## Project Status
 This project is developed and supported by DPD Partnerships and Capacity (PAC) branch and partners incl. BC Wildfire Service (BCWS) Predictive Services Unit 
 
