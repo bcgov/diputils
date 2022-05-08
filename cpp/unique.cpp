@@ -24,7 +24,7 @@ int main(int argc, char ** argv){
   size_t total_size = fsize(dfn);
 
   // cols to filter on
-  set<str> d;
+  unordered_set<str> d;
   for(int i = 0; i < n_fields; i++){
     string f(argv[i + 2]);
     // lower(f);
@@ -35,7 +35,7 @@ int main(int argc, char ** argv){
 
   // output file: include filtered field names in the name of the output file (for sanity)
   string ofn(dfn + string("_unique-"));
-  for(set<str>::iterator it = d.begin(); it!=d.end(); it++){
+  for(unordered_set<str>::iterator it = d.begin(); it!=d.end(); it++){
     ofn += *it + string("-");
   }
   ofn = ofn + string("_") + string(".csv");
@@ -49,7 +49,7 @@ int main(int argc, char ** argv){
   size_t last_p = 0;
   vector<string> row;
   long unsigned int ci = 0;
-  map<string, string> unique;
+  unordered_map<string, string> unique;
 
   // get the field names
   getline(dfile, line);
@@ -68,7 +68,7 @@ int main(int argc, char ** argv){
   outfile << line << endl;
 
   int ii;
-  set<int>::iterator it;
+  unordered_set<int>::iterator it;
   // in the future we should reimplement getline to read whole file into ram if can, or use ramless, different interleaves or latencies
   while(getline(dfile, line)){
     trim(line);
@@ -108,7 +108,7 @@ int main(int argc, char ** argv){
 
   cout << "outputting last unique lines: " << unique.size() << " of " << ci << endl;
   ci = 0;
-  for(map<string, string>::iterator it = unique.begin(); it != unique.end(); it++){
+  for(unordered_map<string, string>::iterator it = unique.begin(); it != unique.end(); it++){
     outfile << it->second << endl;
     if(++ci % 100000 == 0){
       cout << "%" << 100. * float(ci) / float(unique.size()) << endl;
