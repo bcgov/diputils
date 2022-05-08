@@ -40,7 +40,7 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 	- Children in Care (In-Care Network)
 * BC Wildfire Service (BCWS) Fuel Type Layer Project
 
-## Contents by Directory (and examples):
+## Example contents by directory:
 ### **cpp**: c++ based scripts
 - **unique.cpp**: data de-duplication. This script makes is possible to de-duplicate extremely large tables. When it concludes, it indicates how many unique records were retained in the output
 - **dd_slice_apply_cohort.cpp**: using a data dictionary, convert a flat-file to CSV format. This version of the script takes a cohort file as input so that only records pertaining to a cohort of interest are retained (can be very helpful to reduce data volume)
