@@ -186,28 +186,3 @@ class csv_reader: # benchmark it
             return fields
         else:
             return [row for row in csv.reader([line])][0]
-
-
-'''
-r = csv_reader("test/test.csv")
-fields = r.hdr()
-print(fields)
-while True:
-    row = r.row()
-    if row:
-        print(row)
-    else:
-        break
-'''
-'''
-r = csv_reader(["fieldname_bo,fieldname_bo", "mo,bo", "ho,zo", "fo,po"])
-fields = r.hdr()
-print(fields)
-while True:
-    row = r.row()
-    if row:
-        print(row)
-    else:
-        break
-'''
-

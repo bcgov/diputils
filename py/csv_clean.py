@@ -1,5 +1,28 @@
-# Falliable method for cleaning up CSV data: this script not finished
-# read csv data (use this one for small, possibly irregular files)
+'''Not-invincible method for cleaning up CSV data: script needs some revision.
+
+It can read csv data (definitely can use this one for small,
+                      possibly irregular files, no problem!!!) 
+
+20220506 NOTE:
+Can use this script for replacing comma with ;,
+so that some dumber (but faster) C/C++ programs will be able to
+use/read the result
+
+i.e. it's faster to parse CSV where:
+    (*) the contents aren't closed in quotation marks
+    (*) the only comma that appear, are the delimiters. So replacing
+    every non-delimiting ',' with ';' or some other character, can be a 
+    performance enhancing option. 
+
+Example usage:
+
+    python3 ~/GitHub/diputils/py/csv_clean.py  Feb-16th-2022-03-35PM-Flight-Airdata.csv
+    ~/GitHub/diputils/cpp/csv_select.exe select_file isphoto Feb-16th-2022-03-35PM-Flight-Airdata.csv_clean.csv
+
+where contents of file isphoto is 'isPhoto\n1'
+
+(In this example, selected fields from drone telemetry data sheet (csv),
+    where the flag indicated a photo was taken)'''
 import os
 import sys
 import csv
@@ -12,7 +35,6 @@ if len(args) < 2:
 lines = []
 csv_file = open(args[1]) 
 reader = csv.reader(csv_file, delimiter=',')
-
 
 count = {}
 for row in reader:
