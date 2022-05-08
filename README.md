@@ -168,6 +168,9 @@ Then press return.
 #### Make a local copy of pharmanet files (subset for your study population): ####
 ```pnet_get studyid.csv```
 
+
+**Note: this script needs to be updated to reflect currently available data** [here](https://github.com/ashlinrichardson/diputils/blob/aba1628283d64accd6a01052b2951433d7fbc08d/py/pnet_get.py#L22)
+
 ### Converting a "flat file" to csv: ###
 
 First get a copy of the file:
@@ -184,7 +187,9 @@ This program is sanity promoting as some programs could interpret terminating ne
 ```snip studyid.csv```
 
 ### Concatenating pharmanet files ###
-	covered in 2. b)
+the script pnet_get above handles this.
+
+
 
 ### Checking pharmanet files for bad data (according to filtering algorithm provided by MoH subject matter expert) ###
 
