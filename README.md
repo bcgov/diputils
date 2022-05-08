@@ -23,9 +23,7 @@ In C/C++:
 
 In python:
 
-```
-import os; os.system("command_to_run")
-```
+```import os; os.system("command_to_run")```
 
 ## Project Status
 This project is developed and supported by DPD Partnerships and Capacity (PAC) branch and partners incl. BC Wildfire Service (BCWS) Predictive Services Unit 
