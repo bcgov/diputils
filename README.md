@@ -38,12 +38,15 @@ Terminal:
 
 #### make_fakedata.py (generate unrealistic fake data to some extent based on DIP metadata from DataBC)
 Terminal:
+
 ```python3 make_fakedata.py```
-(Alternately, can open in Python IDLE and select RUN from menu, or press F5 key)
+
+(Alternately, can open python scripts in Python IDLE and select RUN from menu, or press F5 key)
 
 Optional arguments:
 
 ```python3 make_fakedata.py [minimum number of rows, per file] [maximum number of rows, per file]```
+
 * minimum number of rows, per file: lower bound for random number of rows of synthetic to generate
 * maximum number of rows, per file: upper bound for random number of rows of synthetic to generate
 
