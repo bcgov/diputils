@@ -61,48 +61,41 @@ Optional arguments:
 
 1. copy the contents of this folder into your private folder (R:/$USER/bin/)
 - copy the tar.gz file into your home folder, and extract it there...
-- this file, bash.bat, etc. should reside in R:/$USER/bin/...
-
-.. for example, if they're in R:/$USER/bin/bin/ the files.. 
-
-.. would need to be moved up a level!
+- this file, bash.bat, etc. should reside in R:/$USER/bin/.. for example, if they were in R:/$USER/bin/diputils-master/ the files should be moved up a level!
 
 2. navigate there (R:/$USER/bin) in Windows Explorer (the file manager)
-	- for example, if my user name was "bob", the place to go is:
+	- for example, if my user name is "bob", the place to go is:
 		R:/bob/bin
 
 3. double-click on bash.bat (bash) to enter the cygwin bash prompt (the
 programs should be built automatically)
 
-You can check if the utilities are working by typing (followed by pressing
-return):
+To check if the utilities are working: can type (followed by pressing return):
 ```
 csv_slice
 ```
 
-If the programs built correctly you would see:
+If programs built correctly you would seem something like:
 
 Error: usage:
         slice.exe [infile] [Field name] .. [Field name n]
 
-4. How to find out where a particular script is:
-at the terminal in the bin/ folder,
-
-to find csv_slice:
+4. How to find out where a particular script is: (at the terminal in the bin/ folder) to find csv_slice:
 ```
 find ./ -name "csv_slice*"
 ```
 
 in this instance the output was:
-  ./cpp/csv_slice.cpp
-  ./csv_slice.exe
 
-the .cpp file is c++ code in the appropriate folder; the .exe file is the verb
+./cpp/csv_slice.cpp
+
+./csv_slice.exe
+
+The .cpp file is c++ code in the appropriate folder; the .exe file is the verb
 deployed at the terminal
-  - These utilities use a language-agnostic format where all scripts are
-    represented as verbs available on the command-line
+* These utilities aim for a language-agnostic format where all scripts (regardless of language) are represented as verbs available on the command-line (hence, from any language via system call)
 
-Notes:
+### Notes:
 How to find out your user name in linux / Cygwin prompt:
 
 type (followed by return):
@@ -113,7 +106,7 @@ For example, if my user name was bob, the terminal should come back and say:
 
    bob 
 
-Example uses:
+## Example uses:
 
 1. Opening and unpacking all the data for a cohort (may be slow and require
 some manual intervention.. also is likely to only cover a limited number of 
