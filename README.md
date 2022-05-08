@@ -113,29 +113,34 @@ some manual intervention.. also is likely to only cover a limited number of
 data sets as new ones have been added since.. and formats have changed, there
 may be issues):
 
-	a) copy a cohort file (csv with studyid col) to the tmp folder:
+a) copy a cohort file (csv with studyid col) to the tmp folder:
 ```
 cp /cygdrive/r/.../cohort.csv .
 ```
 
-	b) type: 
+b) to confirm the file is there type: 
 ```
 ls
 ```
-And press return to see the file is there
-	c) slice out the studyid field (it's a terminal command so have to press return)
+And press return.
+
+c) slice out the studyid field (it's a terminal command so have to press return)
+
 ```
 csv_slice studyid cohort.csv
 ```
-	d) examine the first 10 lines of the result file:
+
+d) examine the first 10 lines of the result file:
 ```
 head -10 cohort.csv_slice.csv
 ```
-	e) move the studyid-only file to a simpler filename:
+
+e) move the studyid-only file to a simpler filename:
 ```
 mv cohort.csv_slice.csv studyid.csv
 ```
-	f) fetch and extract all data for a cohort:
+
+f) fetch and extract all data for a cohort:
 ```
 sup_cohort studyid.csv		
 ```
@@ -143,14 +148,14 @@ sup_cohort studyid.csv
 2. Downloading, fetching and unpacking the latest version of a specific data
 file:
 
-	a) find pharmanet data
+a) find pharmanet data
 ```
 find /cygdrive/r/DATA/ -name "*pharmanet*"
 ```
-		/cygdrive/r/DATA/2019-04-24/docs/data_dictionary_pharmanet-january-1-1996-onwards.xlsx
-		/cygdrive/r/DATA/2019-04-24/pharmanet
+	/cygdrive/r/DATA/2019-04-24/docs/data_dictionary_pharmanet-january-1-1996-onwards.xlsx
+	/cygdrive/r/DATA/2019-04-24/pharmanet
 
-	b) make a local copy of pharmanet files (subset for your study population):
+b) make a local copy of pharmanet files (subset for your study population):
 ```
 pnet_get studyid.csv
 ```
