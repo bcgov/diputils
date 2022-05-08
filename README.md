@@ -40,6 +40,20 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 
 ## Contents by Directory (and examples):
 ### **cpp**: c++ based scripts
+- **unique.cpp**: data de-duplication. This script makes is possible to de-duplicate extremely large tables. When it concludes, it indicates how many unique records were retained in the output
+- **dd_slice_apply_cohort.cpp**: using a data dictionary, convert a flat-file to CSV format. This version of the script takes a cohort file as input so that only records pertaining to a cohort of interest are retained (can be very helpful to reduce data volume)
+- **unique_msp.cpp**: MSP specific: filters MSP (medical services plan) data for unique records, based on several records that define a unique MSP transaction
+- **unzp.cpp**: unzip zip files in the present directory in parallel, to get this done faster
+- **csv_slice.cpp**: slice certain columns out of a (potentially arbitrarily large) CSV file
+-  **csv_sort_date.cpp**: sort a CSV record in order by date
+-  **csv_split_year.cpp**: split a large CSV file into per-year portions
+-  **csv_split.cpp**: convert a CSV file into a columnar format (multi single-col "CSV" files)
+-  **count_col.cpp**: fast counting of outcomes within columnar dataset (single-col "CSV")
+-  **csv_select.cpp**: quick and dirty version of SELECT command in SQL 
+-  **pqt.cpp**: prototype data compression by: dictionary encoding and bit packing
+-  **upqt.cpp**: undo the above compression
+-  **csv_cat.cpp**: concatenate CSV files to create a larger (arbitrarily large) one!
+
 ### **py**: python based scripts
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
 - **make_fakedata.py**: synthesize DIP data from the above metadata
