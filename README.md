@@ -70,6 +70,8 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 - **dd_sliceapply_all.py**: convert all flat files in a directory, to CSV (finding the data dictionaries automagically etc.)
 - **forever.py**: loop a command repeatedly for example when monitoring jobs that run for hours or days
 ### **R**: R based scripts
+- **dd_unpack.R**: convert an Excel file (e.g. data dictionary) to CSV format
+- **fw2parquet.R**: convert a fixed-width file (with data dictionary in expected format) to Apache Parquet format
 ### **c**: C based scripts
 
 ## Sample use (outside of DIP):
