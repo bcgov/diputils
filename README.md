@@ -72,6 +72,7 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 ### **R**: R based scripts
 - **dd_unpack.R**: convert an Excel file (e.g. data dictionary) to CSV format
 - **fw2parquet.R**: convert a fixed-width file (with data dictionary in expected format) to Apache Parquet format
+- **csv_plot.R**: create a simple scatter plot (with trendline) from a CSV (specific 2-col format)
 ### **c**: C based scripts
 
 ## Sample use (outside of DIP):
