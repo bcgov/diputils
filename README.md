@@ -2,16 +2,18 @@
 Utilities to support the [**Data Innovation Program** (DIP)](https://www2.gov.bc.ca/gov/content/data/about-data-management/data-innovation-program). Generally Windows, Mac and Linux environments supported, some aspects may require POPDATA SRE to run
 
 ## Features
-This package presently supports several big-data friendly operations for tabular data
-
-Properties of data in DIP environment
-- Zipped
+This package presently supports several big-data friendly operations for tabular data, due to [roperties of data in DIP environment
+- **Fixed width format** w data dictionary or header file specifying field names and widths
+- - Using DIP metadata, some of which are avail. from BC Data Catalogue
 - Quite large, potentially **up to tens of GB per file**
-- Produced from DIP metadata available on BC Data Catalogue
-- **Fixed width format** with data dictionary or header file specifying field names and widths
+- Zipped
+
+Guiding principles:
+* *making results obtainable* by extending the size of files that can be processed, typically by incrementally reading files so that the size of data that can be processed, is limited only by the main storage of the system (i.e., moving from 10's of GB to 100's-1000's of GB range)
+* Self-contained / not using dependencies beyond base language features included in python, C/C++ and R. When working in a secure environment, software requests can take weeks to get approved. Therefore, to some degree, having a reference set of functions that are simple and transparent enough to recreate manually (if need be) is advantageous to support researchers flexibility
 
 ## Project Status
-This project is currently developed and supported by DPD Partnerships and Capacity (PAC) branch and partners such as BC Wildfire Service (BCWS) Predictive Services Unit 
+This project is currently developed and supported by DPD Partnerships and Capacity (PAC) branch and partners incl. BC Wildfire Service (BCWS) Predictive Services Unit 
 
 ## Projects Supported incl.
 * Dip projects: CYMH / DIP Development proeject / Children in Care (in care network) / Educ. Special needs project
@@ -29,7 +31,6 @@ This project is currently developed and supported by DPD Partnerships and Capaci
 - **make_fakedata.py**: synthesize DIP data from the above metadata
 - **csv_to_fixedwidth.py**: convert CSV data to "fixed width" format
 - **indent.py**: indent a code file
-- **misc.py**: shared functions
 
 ## Example Usage (outside of DIP):
 
