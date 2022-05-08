@@ -61,9 +61,11 @@ Optional arguments:
 
 1. copy the contents of this folder into your private folder (R:/$USER/bin/)
 - copy the tar.gz file into your home folder, and extract it there...
-    - this file, bash.bat, etc. should reside in R:/$USER/bin/...
-       .. for example, if they're in R:/$USER/bin/bin/ the files.. 
- 	.. would need to be moved up a level!
+- this file, bash.bat, etc. should reside in R:/$USER/bin/...
+
+.. for example, if they're in R:/$USER/bin/bin/ the files.. 
+
+.. would need to be moved up a level!
 
 2. navigate there (R:/$USER/bin) in Windows Explorer (the file manager)
 	- for example, if my user name was "bob", the place to go is:
