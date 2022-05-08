@@ -179,11 +179,13 @@ snip studyid.csv
 ```
 pnet_check dsp_rpt.dat_dd_sliceapply.csv
 ```
-	(bad data, if detected, should appear in a separate file)
 
-7. example of analyzing mh drug usage from pnet:
+Bad data, if detected, should appear in a separate file.
+
+7. Example of analyzing mh drug usage from pnet:
  (note: this script should now download, fetch, unpack, clean, concatenate,
 and analyze pharmanet data for a cohort-- no intervention required)
+
 ```
 pnet_druglist studyid.csv
 ```
