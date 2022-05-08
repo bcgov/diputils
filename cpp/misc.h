@@ -39,6 +39,7 @@
 #include<memory.h>
 #include<algorithm>
 #include"ansicolor.h"
+#include<unordered_set>
 
 using namespace std;
 
