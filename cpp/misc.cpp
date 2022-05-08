@@ -15,7 +15,7 @@
 #include"misc.h"
 string cwd(){
   char s[PATH_MAX];
-  _cwd(s, PATH_MAX);
+  char * result = _cwd(s, PATH_MAX);
   return string(s);
 }
 
