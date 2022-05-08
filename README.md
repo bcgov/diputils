@@ -29,12 +29,12 @@ In python:
 This project is developed and supported by DPD Partnerships and Capacity (PAC) branch and partners incl. BC Wildfire Service (BCWS) Predictive Services Unit 
 
 ## Projects Supported incl.
+* Race based data initiative (RBD) 
 * Dip projects: 
 	- CYMH
 	- DIP Development project
+	- Education Special needs project
 	- Children in Care (in care network)
-	- Educ. Special needs project
-* Race based data initiative (RBD) 
 * BC Wildfire Service (BCWS) Fuel Type Layer Project
 
 ## Contents by Directory (and examples):
