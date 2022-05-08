@@ -1,5 +1,16 @@
-/* 20190531 unique.cpp: filter for unique values of several cols, whatever they are..
-this version is case sensitive..*/
+/* 20190531 unique.cpp: filter for unique values of A) or B):
+
+A) the record as a whole (default) 
+  ```unique input_data_file.csv```
+
+This is the primary intended usage as tabular datasets often contain duplicated records. In this case de-duplication is necessary to ensure analytic measurements are as accurate as possible
+
+B) filtering for unique values of specific columns:
+  ```unique input_data_file.csv studyid```
+
+Would produce an output table with one row per unique studyid (in that example you would only do this is you wanted to select just one row, for each service user)
+    
+Note: This version of the program is  case sensitive.*/
 #include"misc.h"
 using namespace std;
 
