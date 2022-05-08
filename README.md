@@ -58,8 +58,17 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 ### **py**: python based scripts
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
 - **make_fakedata.py**: synthesize DIP data from the above metadata
+- **dd_list.py**: find, convert "all" (all at the time of development) data dictionaries available in the environment, to a common cleaned format
+- **dd_match_data_file.py**: for a data file, find an acceptable data dictionary to use to open it 
+- **df_list.py**: list available data files (flat files) in the POPDATA environment
+- **dd_get.py**: pull the "most current" copy of a given table (named by it's file name)
 - **csv_to_fixedwidth.py**: convert CSV data to "fixed width" format
+- **parquet_to_csv.py**: convert an Apache-parquet format file to CSV format
+- **csv_grep.py**: grep operation for csv files that produces output that is also valid CSV with header
 - **indent.py**: indent a code file
+- **multicore.py**: run jobs listed in a shell script, in parallel
+- **dd_sliceapply_all.py**: convert all flat files in a directory, to CSV (finding the data dictionaries automagically etc.)
+- **forever.py**: loop a command repeatedly for example when monitoring jobs that run for hours or days
 ### **R**: R based scripts
 ### **c**: C based scripts
 
