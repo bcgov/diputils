@@ -20,17 +20,15 @@ This project is currently developed and supported by DPD Partnerships and Capaci
 * Race based data initiative (RBD) 
 * BC Wildfire Service (BCWS) Fuel Type Layer Project
 
-## Contents by Directory:
-* **cpp**: c++ based scripts
-* **py**: python based scripts
-* **R**: R based scripts
-* **c**: C based scripts
-
-#### [/](.//)
+## Contents by Directory (and examples):
+### **cpp**: c++ based scripts
+### **py**: python based scripts
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
 - **make_fakedata.py**: synthesize DIP data from the above metadata
 - **csv_to_fixedwidth.py**: convert CSV data to "fixed width" format
 - **indent.py**: indent a code file
+### **R**: R based scripts
+### **c**: C based scripts
 
 ## Example Usage (outside of DIP):
 
