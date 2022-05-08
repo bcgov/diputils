@@ -84,9 +84,7 @@ Optional arguments:
 programs should be built automatically)
 
 To check if the utilities are working: can type (followed by pressing return):
-```
-csv_slice
-```
+```csv_slice```
 
 If programs built correctly you would seem something like:
 
@@ -94,9 +92,7 @@ Error: usage:
         slice.exe [infile] [Field name] .. [Field name n]
 
 4. How to find out where a particular script is: (at the terminal in the bin/ folder) to find csv_slice:
-```
-find ./ -name "csv_slice*"
-```
+```find ./ -name "csv_slice*"```
 
 in this instance the output was:
 
@@ -112,9 +108,7 @@ deployed at the terminal
 How to find out your user name in linux / Cygwin prompt:
 
 type (followed by return):
-```
-whoami
-```
+```whoami```
 For example, if my user name was bob, the terminal should come back and say:
 
    bob 
@@ -127,81 +121,61 @@ data sets as new ones have been added since.. and formats have changed, there
 may be issues):
 
 a) copy a cohort file (csv with studyid col) to the tmp folder:
-```
-cp /cygdrive/r/.../cohort.csv .
-```
+```cp /cygdrive/r/.../cohort.csv .```
 
 b) to confirm the file is there type: 
-```
-ls
-```
+```ls```
 And press return.
 
 c) slice out the studyid field (it's a terminal command so have to press return)
-
-```
-csv_slice studyid cohort.csv
-```
+```csv_slice studyid cohort.csv```
 
 d) examine the first 10 lines of the result file:
-```
-head -10 cohort.csv_slice.csv
-```
+```head -10 cohort.csv_slice.csv```
 
 e) move the studyid-only file to a simpler filename:
-```
-mv cohort.csv_slice.csv studyid.csv
-```
+```mv cohort.csv_slice.csv studyid.csv```
 
 f) fetch and extract all data for a cohort:
-```
-sup_cohort studyid.csv		
-```
+```sup_cohort studyid.csv		```
 
 2. Downloading, fetching and unpacking the latest version of a specific data
 file:
 
 a) find pharmanet data
-```
-find /cygdrive/r/DATA/ -name "*pharmanet*"
-```
+```find /cygdrive/r/DATA/ -name "*pharmanet*"```
+
 /cygdrive/r/DATA/2019-04-24/docs/data_dictionary_pharmanet-january-1-1996-onwards.xlsx
 /cygdrive/r/DATA/2019-04-24/pharmanet
 
 b) make a local copy of pharmanet files (subset for your study population):
-```
-pnet_get studyid.csv
-```
+```pnet_get studyid.csv```
 
-3. Converting a "flat file" to csv (get a copy of a file first, then convert to csv):
-```
-df_get hlth_prod_final.dat
-dd_sliceapply_all hlth_prod_final.dat
-```
+3. Converting a "flat file" to csv:
+First get a copy of the file:
+```df_get hlth_prod_final.dat```
+
+And convert it to CSV:
+```dd_sliceapply_all hlth_prod_final.dat```
 
 4. In-place removal of whitespace characters from the end of a file (some programs
 could interpret terminating newline character as a record?)
-```
-snip studyid.csv
-```
+```snip studyid.csv```
 
 5. concatenating pharmanet files
 	covered in 2. b)
 
-6. checking pharmanet files for bad data (according to filtering algorithm..)
-```
-pnet_check dsp_rpt.dat_dd_sliceapply.csv
-```
+6. checking pharmanet files for bad data (according to filtering algorithm provided by MoH subject matter expert)
+```pnet_check dsp_rpt.dat_dd_sliceapply.csv```
 
 Bad data, if detected, should appear in a separate file.
 
 7. Example of analyzing mh drug usage from pnet:
- (note: this script should now download, fetch, unpack, clean, concatenate,
-and analyze pharmanet data for a cohort-- no intervention required)
 
-```
-pnet_druglist studyid.csv
-```
+Although this script depends on one proprietary table (.xls) that is not provided here, otherwise the script should:
+download, fetch, unpack, clean, concatenate, and analyze pharmanet data for a cohort, without intervention.
+
+```pnet_druglist studyid.csv```
 
 #### []()
 
