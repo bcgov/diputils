@@ -6,8 +6,10 @@ This package presently supports several big-data friendly operations for tabular
 * **Fixed width format** w data dictionary or header file specifying field names and widths
 * Using DIP metadata, some of which are avail. from BC Data Catalogue
 * **Quite large** potentially up to **tens of GB per file** or more
-* Duplicate records that need to be de-duplicated
+* De-duplicate records that need to be de-duplicated
 * Zipped
+
+For example, de-duplicating records is easy to neglect if there is not an efficient implementation available for doing that. Note: de-duplicating records currently does require RAM large enough to hold the data so it may be necessary to split datasets (e.g. by year) in order to do this
 
 ### Guiding principles:
 * **Making results obtainable** by increasing the data volume that can be processed, e.g. by incrementally reading files so the main storage of the system becomes the limiting factor (i.e., moving from 10's of GB to 100's-1000's of GB range)
