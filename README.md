@@ -115,7 +115,11 @@ may be issues):
 	
 		cp /cygdrive/r/.../cohort.csv .
 
-	b) type: ls and press return to see the file is there
+	b) type: 
+	
+	ls
+	
+	and press return to see the file is there
 	c) slice out the studyid field (it's a terminal command so have to
 press return)
 		csv_slice studyid cohort.csv
