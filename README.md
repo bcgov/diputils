@@ -52,10 +52,9 @@ Optional arguments:
 * the data dictionaries don't typically appear in the same folder as the fixed-width files they're associated with. Software for matching fixed-width files with data dictionaries, will soon be provided in this repository 
 
 ## Example Usage (inside of DIP)
+### Building "diputils" command-line utilities in SRE:
 
-Examples of how to build/ run "diputils" command-line utilities in SRE:
-
-1. copy this bin folder into your private folder (R:/$USER/bin/)
+1. copy the contents of this folder into your private folder (R:/$USER/bin/)
 - copy the tar.gz file into your home folder, and extract it there...
     - this file, bash.bat, etc. should reside in R:/$USER/bin/...
        .. for example, if they're in R:/$USER/bin/bin/ the files.. 
