@@ -10,7 +10,7 @@ This package presently supports several big-data friendly operations for tabular
 
 Guiding principles:
 * *making results obtainable* by extending the size of files that can be processed, typically by incrementally reading files so that the size of data that can be processed, is limited only by the main storage of the system (i.e., moving from 10's of GB to 100's-1000's of GB range)
-* Self-contained / not using dependencies beyond base language features included in python, C/C++ and R. When working in a secure environment, software requests can take weeks to get approved. Therefore, to some degree, having a reference set of functions that are simple and transparent enough to recreate manually (if need be) is advantageous to support researchers flexibility
+* Self-contained / not using dependencies beyond base language features included in python, C/C++ and R. When working in a secure environment, software requests can take weeks to get approved. Therefore, to some degree, having a reference set of functions that are simple and transparent enough to recreate portions of manually (if need be) supports researchers flexibility
 
 ## Project Status
 This project is currently developed and supported by DPD Partnerships and Capacity (PAC) branch and partners incl. BC Wildfire Service (BCWS) Predictive Services Unit 
