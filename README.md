@@ -152,8 +152,8 @@ a) find pharmanet data
 ```
 find /cygdrive/r/DATA/ -name "*pharmanet*"
 ```
-	/cygdrive/r/DATA/2019-04-24/docs/data_dictionary_pharmanet-january-1-1996-onwards.xlsx
-	/cygdrive/r/DATA/2019-04-24/pharmanet
+/cygdrive/r/DATA/2019-04-24/docs/data_dictionary_pharmanet-january-1-1996-onwards.xlsx
+/cygdrive/r/DATA/2019-04-24/pharmanet
 
 b) make a local copy of pharmanet files (subset for your study population):
 ```
