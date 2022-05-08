@@ -33,7 +33,9 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 ## Sample use (outside of DIP):
 #### get_metadata.py (fetch DIP metadata from DataBC)
 Terminal:
+
 ```python3 get_metadata.py```
+
 (Alternately, can open in Python IDLE and select RUN from menu, or press F5 key)
 
 #### make_fakedata.py (generate unrealistic fake data to some extent based on DIP metadata from DataBC)
