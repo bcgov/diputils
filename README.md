@@ -5,7 +5,8 @@ Utilities to support the [**Data Innovation Program** (DIP)](https://www2.gov.bc
 This package presently supports several big-data friendly operations for tabular data, due to properties of data in DIP environment
 * **Fixed width format** w data dictionary or header file specifying field names and widths
 * Using DIP metadata, some of which are avail. from BC Data Catalogue
-* Quite large, potentially **up to tens of GB per file**
+* **Quite large** potentially up to **tens of GB per file** or more
+* Duplicate records that need to be de-duplicated
 * Zipped
 
 ### Guiding principles:
