@@ -29,7 +29,11 @@ In python:
 This project is developed and supported by DPD Partnerships and Capacity (PAC) branch and partners incl. BC Wildfire Service (BCWS) Predictive Services Unit 
 
 ## Projects Supported incl.
-* Dip projects: CYMH / DIP Development proeject / Children in Care (in care network) / Educ. Special needs project
+* Dip projects: 
+	- CYMH
+	- DIP Development project
+	- Children in Care (in care network)
+	- Educ. Special needs project
 * Race based data initiative (RBD) 
 * BC Wildfire Service (BCWS) Fuel Type Layer Project
 
