@@ -81,7 +81,8 @@ Error: usage:
 at the terminal in the bin/ folder,
 
 to find csv_slice:
-  find ./ -name "csv_slice*"
+
+	find ./ -name "csv_slice*"
 
 in this instance the output was:
   ./cpp/csv_slice.cpp
@@ -97,7 +98,7 @@ How to find out your user name in linux / Cygwin prompt:
 
 type (followed by return):
 
-  whoami
+	whoami
 
 For example, if my user name was bob, the terminal should come back and say:
 
@@ -111,6 +112,7 @@ data sets as new ones have been added since.. and formats have changed, there
 may be issues):
 
 	a) copy a cohort file (csv with studyid col) to the tmp folder:
+	
 		cp /cygdrive/r/.../cohort.csv .
 
 	b) type: ls and press return to see the file is there
