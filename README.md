@@ -8,7 +8,7 @@ This package presently supports several big-data friendly operations for tabular
 * Quite large, potentially **up to tens of GB per file**
 * Zipped
 
-Guiding principles:
+### Guiding principles:
 * **Making results obtainable** by increasing the data volume that can be processed, e.g. by incrementally reading files so the main storage of the system becomes the limiting factor (i.e., moving from 10's of GB to 100's-1000's of GB range)
 * **Self-contained** / not using dependencies beyond base language features included in python, C/C++ and R. When working in a secure environment, software requests can take weeks to get approved. Therefore, to some degree, having a reference set of functions that are simple and transparent enough to recreate portions of manually (if need be) supports researchers flexibility
 
@@ -30,8 +30,7 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 ### **R**: R based scripts
 ### **c**: C based scripts
 
-## Example Usage (outside of DIP):
-
+## Sample use (outside of DIP):
 #### get_metadata.py (fetch DIP metadata from DataBC)
 Terminal:
 ```python3 get_metadata.py```
