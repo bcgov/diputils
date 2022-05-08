@@ -115,5 +115,6 @@ int main(int argc, char ** argv){
     }
   }
   outfile.close();
+  cout << "+w " << ofn << endl;
   return 0;
 }
