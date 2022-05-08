@@ -119,11 +119,11 @@ may be issues):
 ```
 	ls
 ```
-	and press return to see the file is there
-	c) slice out the studyid field (it's a terminal command so have to
-press return)
-		csv_slice studyid cohort.csv
-
+And press return to see the file is there
+	c) slice out the studyid field (it's a terminal command so have to press return)
+```
+csv_slice studyid cohort.csv
+```
 	d) examine the first 10 lines of the result file:
 		head -10 cohort.csv_slice.csv
 
