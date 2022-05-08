@@ -53,7 +53,8 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 -  **pqt.cpp**: prototype data compression by: dictionary encoding and bit packing
 -  **upqt.cpp**: undo the above compression
 -  **csv_cat.cpp**: concatenate CSV files to create a larger (arbitrarily large) one!
-
+- **pnet_check.cpp**: filter pharmanet (PNET) data according to an industry-standard method
+ 
 ### **py**: python based scripts
 - **get_metadata.py**: fetch DIP metadata from BC Data Catalogue (BCDC)
 - **make_fakedata.py**: synthesize DIP data from the above metadata
