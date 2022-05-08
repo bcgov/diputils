@@ -32,9 +32,9 @@ This project is developed and supported by DPD Partnerships and Capacity (PAC) b
 * Race based data initiative (RBD) 
 * Dip projects: 
 	- CYMH
-	- DIP Development project
-	- Education Special needs project
-	- Children in Care (in care network)
+	- DIP Development
+	- Education Special Needs
+	- Children in Care (In-Care Network)
 * BC Wildfire Service (BCWS) Fuel Type Layer Project
 
 ## Contents by Directory (and examples):
