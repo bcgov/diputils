@@ -125,18 +125,18 @@ For example, if my user name was bob, the terminal should come back and say:
 This operation may be quite slow and require some manual intervention. Also the process here is likely to only cover some fraction of available 
 data sets as new ones have been added since, and there may be issues due to formatting updates
 
-#### copy a cohort file (csv with studyid col) to the tmp folder: ####
+#### Copy a cohort file (csv with studyid col) to (present) tmp folder: ####
 
 ```cp /cygdrive/r/.../cohort.csv .```
 
-#### to confirm the file is there ####
-Type: 
+#### To confirm the file is there ####
+Can type: 
 
 ```ls```
 
 And press return.
 
-#### slice out the studyid field ####
+#### Slice out the studyid field ####
 A terminal command so have to press return after:
 
 ```csv_slice studyid cohort.csv```
@@ -145,29 +145,27 @@ A terminal command so have to press return after:
 
 ```head -10 cohort.csv_slice.csv```
 
-#### move the studyid-only file to a simpler filename: ####
+#### Move the studyid-only file to a simpler filename: ####
 For convenience: 
 
 ```mv cohort.csv_slice.csv studyid.csv```
 
 Then press return. 
 
-#### fetch and extract all data for a cohort: ####
+#### Fetch and extract all data for a cohort: ####
 
-```sup_cohort studyid.csv		```
+```sup_cohort studyid.csv```
 
-### Downloading, fetching and unpacking the latest version of a specific data
-file: ###
+### Downloading, fetching and unpacking the latest version of a specific data file ###
 
-#### find pharmanet data ####
+#### Find pharmanet data ####
 
 ```find /cygdrive/r/DATA/ -name "*pharmanet*"```
 
 /cygdrive/r/DATA/2019-04-24/docs/data_dictionary_pharmanet-january-1-1996-onwards.xlsx
 /cygdrive/r/DATA/2019-04-24/pharmanet
 
-#### make a local copy of pharmanet files (subset for your study population): ####
-
+#### Make a local copy of pharmanet files (subset for your study population): ####
 ```pnet_get studyid.csv```
 
 ### Converting a "flat file" to csv: ###
@@ -180,15 +178,15 @@ And convert it to CSV:
 
 ```dd_sliceapply_all hlth_prod_final.dat```
 
-### In-place removal of whitespace characters from the end of a file ###
-(some programs could interpret terminating newline character as a record?)
+### In-place removal of whitespace characters from end of a file ###
+This program is sanity promoting as some programs could interpret terminating newline character as a record, leading to inaccuracies or errors:
 
 ```snip studyid.csv```
 
-### concatenating pharmanet files ###
+### Concatenating pharmanet files ###
 	covered in 2. b)
 
-### checking pharmanet files for bad data (according to filtering algorithm provided by MoH subject matter expert) ###
+### Checking pharmanet files for bad data (according to filtering algorithm provided by MoH subject matter expert) ###
 
 ```pnet_check dsp_rpt.dat_dd_sliceapply.csv```
 
