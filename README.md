@@ -69,7 +69,7 @@ Optional arguments:
 * data are provided in fixed-width format ONLY (no CSV files)
 * the data dictionaries don't typically appear in the same folder as the fixed-width files they're associated with. Software for matching fixed-width files with data dictionaries, is provided in this repository 
 
-## Example Usage (inside of DIP)
+## Using inside of DIP environment
 ### Building "diputils" command-line utilities in SRE:
 
 1. copy the contents of this folder into your private folder (R:/$USER/bin/)
@@ -117,53 +117,56 @@ For example, if my user name was bob, the terminal should come back and say:
 
    bob 
 
-## Example uses:
+## Example uses (not all DIP specific):
+### Opening and unpacking data for a cohort ###
+This operation may be quite slow and require some manual intervention. Also the process here is likely to only cover some fraction of available 
+data sets as new ones have been added since, and there may be issues due to formatting updates
 
-1. Opening and unpacking all the data for a cohort (may be slow and require
-some manual intervention.. also is likely to only cover a limited number of 
-data sets as new ones have been added since.. and formats have changed, there
-may be issues):
-
-a) copy a cohort file (csv with studyid col) to the tmp folder:
+#### copy a cohort file (csv with studyid col) to the tmp folder:####
 
 ```cp /cygdrive/r/.../cohort.csv .```
 
-b) to confirm the file is there type: 
+#### to confirm the file is there ####
+Type: 
 
 ```ls```
 And press return.
 
-c) slice out the studyid field (it's a terminal command so have to press return)
+#### slice out the studyid field ####
+A terminal command so have to press return after:
 
 ```csv_slice studyid cohort.csv```
 
-d) examine the first 10 lines of the result file:
+#### Examine first 10 lines of the result file ####
 
 ```head -10 cohort.csv_slice.csv```
 
-e) move the studyid-only file to a simpler filename:
+#### move the studyid-only file to a simpler filename: ####
+For convenience: 
 
 ```mv cohort.csv_slice.csv studyid.csv```
 
-f) fetch and extract all data for a cohort:
+Then press return. 
+
+#### fetch and extract all data for a cohort: ####
 
 ```sup_cohort studyid.csv		```
 
-2. Downloading, fetching and unpacking the latest version of a specific data
-file:
+### Downloading, fetching and unpacking the latest version of a specific data
+file: ###
 
-a) find pharmanet data
+#### find pharmanet data ####
 
 ```find /cygdrive/r/DATA/ -name "*pharmanet*"```
 
 /cygdrive/r/DATA/2019-04-24/docs/data_dictionary_pharmanet-january-1-1996-onwards.xlsx
 /cygdrive/r/DATA/2019-04-24/pharmanet
 
-b) make a local copy of pharmanet files (subset for your study population):
+#### make a local copy of pharmanet files (subset for your study population): ####
 
 ```pnet_get studyid.csv```
 
-3. Converting a "flat file" to csv:
+### Converting a "flat file" to csv: ###
 
 First get a copy of the file:
 
@@ -173,28 +176,26 @@ And convert it to CSV:
 
 ```dd_sliceapply_all hlth_prod_final.dat```
 
-4. In-place removal of whitespace characters from the end of a file (some programs
-could interpret terminating newline character as a record?)
+### In-place removal of whitespace characters from the end of a file ###
+(some programs could interpret terminating newline character as a record?)
 
 ```snip studyid.csv```
 
-5. concatenating pharmanet files
+### concatenating pharmanet files ###
 	covered in 2. b)
 
-6. checking pharmanet files for bad data (according to filtering algorithm provided by MoH subject matter expert)
+### checking pharmanet files for bad data (according to filtering algorithm provided by MoH subject matter expert) ###
 
 ```pnet_check dsp_rpt.dat_dd_sliceapply.csv```
 
 Bad data, if detected, should appear in a separate file.
 
-7. Example of analyzing mh drug usage from pnet:
+### Example of analyzing mh drug usage from pnet: ###
 
 Although this script depends on one proprietary table (.xls) that is not provided here, otherwise the script should:
 download, fetch, unpack, clean, concatenate, and analyze pharmanet data for a cohort, without intervention.
 
 ```pnet_druglist studyid.csv```
-
-#### []()
 
 ## Getting Help
 Please contact Ashlin.Richardson@gov.bc.ca for assistance or to provide feedback
