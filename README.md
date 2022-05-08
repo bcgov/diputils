@@ -9,11 +9,11 @@ This package presently supports several big-data friendly operations for tabular
 * Zipped
 
 Guiding principles:
-* *Making results obtainable* by increasing the data volume that can be processed, e.g. by incrementally reading files so the main storage of the system becomes the limiting factor (i.e., moving from 10's of GB to 100's-1000's of GB range)
-* Self-contained / not using dependencies beyond base language features included in python, C/C++ and R. When working in a secure environment, software requests can take weeks to get approved. Therefore, to some degree, having a reference set of functions that are simple and transparent enough to recreate portions of manually (if need be) supports researchers flexibility
+* **Making results obtainable** by increasing the data volume that can be processed, e.g. by incrementally reading files so the main storage of the system becomes the limiting factor (i.e., moving from 10's of GB to 100's-1000's of GB range)
+* **Self-contained** / not using dependencies beyond base language features included in python, C/C++ and R. When working in a secure environment, software requests can take weeks to get approved. Therefore, to some degree, having a reference set of functions that are simple and transparent enough to recreate portions of manually (if need be) supports researchers flexibility
 
 ## Project Status
-This project is currently developed and supported by DPD Partnerships and Capacity (PAC) branch and partners incl. BC Wildfire Service (BCWS) Predictive Services Unit 
+This project is developed and supported by DPD Partnerships and Capacity (PAC) branch and partners incl. BC Wildfire Service (BCWS) Predictive Services Unit 
 
 ## Projects Supported incl.
 * Dip projects: CYMH / DIP Development proeject / Children in Care (in care network) / Educ. Special needs project
