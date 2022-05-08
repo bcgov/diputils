@@ -104,7 +104,6 @@ in this instance the output was:
 
 The .cpp file is c++ code in the appropriate folder; the .exe file is the verb
 deployed at the terminal
-* These utilities aim for a language-agnostic format where all scripts (regardless of language) are represented as verbs available on the command-line (hence, from any language via system call)
 
 ### Notes:
 How to find out your user name in linux / Cygwin prompt:
